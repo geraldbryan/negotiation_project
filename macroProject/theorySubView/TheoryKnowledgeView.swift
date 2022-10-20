@@ -19,7 +19,7 @@ struct TheoryKnowledgeView: View{
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(width: 25, height: 25)
-                .background(Color("backButtonColor"))
+                .background(Color("green_tone"))
                 .clipShape(Circle())
                 .frame(alignment: .topLeading)
             
@@ -36,12 +36,12 @@ struct TheoryKnowledgeView: View{
     var body: some View{
         ScrollView(){
             ZStack{
-                Color("backgroundColor")
+                Color("backgroundColor").ignoresSafeArea()
                 VStack{
                     Text(knowledge.title)
                         .font(.system(size: 30, weight: .bold))
                         .frame(width: 350, height: 50, alignment: .leading)
-                        .foregroundColor(Color("backButtonColor"))
+                        .foregroundColor(Color("green_tone"))
                     
                     Text(knowledge.brief)
                         .font(.system(size: 15, weight: .semibold))
@@ -50,10 +50,10 @@ struct TheoryKnowledgeView: View{
                     HStack{
                         Image(systemName: knowledge.icon)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         Text(knowledge.textIcon)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                     }.frame(width: 350, height: 45, alignment: .leading)
                         .offset(y: 30)
                     
@@ -63,7 +63,7 @@ struct TheoryKnowledgeView: View{
                             .frame(width: 350, height: 30, alignment: .leading)
                         Image(systemName:"text.badge.star")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                             .frame(width: 350, height: 50, alignment: .leading)
                             .offset(x:15)
                         Text(knowledge.info1)
@@ -77,7 +77,7 @@ struct TheoryKnowledgeView: View{
                             .frame(width: 350, height: 30, alignment: .leading)
                         Image(systemName:"star.leadinghalf.filled")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                             .frame(width: 350, height: 50, alignment: .leading)
                             .offset(x:15)
                         Text(knowledge.info2)
@@ -91,7 +91,7 @@ struct TheoryKnowledgeView: View{
                             .frame(width: 350, height: 30, alignment: .leading)
                         Image(systemName:"person.2")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                             .frame(width: 350, height: 50, alignment: .leading)
                             .offset(x:15)
                         Text(knowledge.info3)
@@ -105,7 +105,7 @@ struct TheoryKnowledgeView: View{
                             .frame(width: 350, height: 30, alignment: .leading)
                         Image(systemName:"ear")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                             .frame(width: 350, height: 50, alignment: .leading)
                             .offset(x:15)
                         Text(knowledge.info4)
@@ -119,7 +119,7 @@ struct TheoryKnowledgeView: View{
                             .frame(width: 350, height: 30, alignment: .leading)
                         Image(systemName:"list.bullet")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                             .frame(width: 350, height: 50, alignment: .leading)
                             .offset(x:15)
                         Text(knowledge.info5)
