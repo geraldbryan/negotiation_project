@@ -16,7 +16,7 @@ struct HomeView: View {
         NavigationView{
             
             ZStack{
-                Color("backgroundColor").ignoresSafeArea()
+                Color("yellow_tone").ignoresSafeArea()
                 
                 VStack(spacing: 20){
                     HStack{
@@ -72,9 +72,7 @@ struct HomeView: View {
                     //ini tombolnya be buat start button
                     //nihh be
                     HStack(alignment: .bottom){
-                        Button(action: {
-                            
-                        }, label: {
+                        NavigationLink(destination: backgroundview(), label: {
                             Image( "Ready_button")
                                 .foregroundColor(.black)
                                 .frame(width: 363, height: 120)
@@ -87,7 +85,7 @@ struct HomeView: View {
                     
                 }
             }.ignoresSafeArea()
-        }
+        }.navigationBarHidden(true).ignoresSafeArea()
     }
 }
 

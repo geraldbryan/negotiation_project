@@ -35,7 +35,7 @@ struct TheoryMatrixView: View{
     var body: some View{
         
         ZStack{
-            Color("backgroundColor").ignoresSafeArea()
+            Color("yellow_tone").ignoresSafeArea()
             ScrollView(){
                 VStack{
                     Image(matrix.image)
