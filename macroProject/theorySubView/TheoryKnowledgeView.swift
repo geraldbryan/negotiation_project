@@ -36,7 +36,7 @@ struct TheoryKnowledgeView: View{
     var body: some View{
         ScrollView(){
             ZStack{
-                Color("backgroundColor").ignoresSafeArea()
+                Color("yellow_tone").ignoresSafeArea()
                 VStack{
                     Text(knowledge.title)
                         .font(.system(size: 30, weight: .bold))

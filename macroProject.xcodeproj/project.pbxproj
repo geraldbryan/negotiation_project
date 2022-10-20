@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90BAE1B329015C3C002B9889 /* storyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B229015C3C002B9889 /* storyData.swift */; };
+		90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B429015C4C002B9889 /* backgroundview.swift */; };
+		90BAE1B729015C60002B9889 /* storyDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B629015C60002B9889 /* storyDetailData.swift */; };
+		90BAE1BA29015C89002B9889 /* SwiftUISpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B929015C89002B9889 /* SwiftUISpeech.swift */; };
+		90BAE1BC29015CF7002B9889 /* SpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1BB29015CF7002B9889 /* SpeechButton.swift */; };
+		90BAE1C029015E10002B9889 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = 90BAE1BF29015E10002B9889 /* AlertX */; };
+		90BAE1C229015EE3002B9889 /* feedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1C129015EE3002B9889 /* feedbackView.swift */; };
+		90BAE1C629016042002B9889 /* NegotiationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1C529016042002B9889 /* NegotiationView.swift */; };
 		B20B2D8828E6B7EB007E690D /* TheoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20B2D8728E6B7EB007E690D /* TheoryView.swift */; };
 		B282501A28FE90DE00450060 /* TheoryKnowledgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282501928FE90DE00450060 /* TheoryKnowledgeView.swift */; };
 		B282501C28FE910600450060 /* Knowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282501B28FE910600450060 /* Knowledge.swift */; };
@@ -24,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90BAE1B229015C3C002B9889 /* storyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyData.swift; sourceTree = "<group>"; };
+		90BAE1B429015C4C002B9889 /* backgroundview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backgroundview.swift; sourceTree = "<group>"; };
+		90BAE1B629015C60002B9889 /* storyDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyDetailData.swift; sourceTree = "<group>"; };
+		90BAE1B929015C89002B9889 /* SwiftUISpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUISpeech.swift; sourceTree = "<group>"; };
+		90BAE1BB29015CF7002B9889 /* SpeechButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButton.swift; sourceTree = "<group>"; };
+		90BAE1C129015EE3002B9889 /* feedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feedbackView.swift; sourceTree = "<group>"; };
+		90BAE1C529016042002B9889 /* NegotiationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegotiationView.swift; sourceTree = "<group>"; };
 		B20B2D8728E6B7EB007E690D /* TheoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryView.swift; sourceTree = "<group>"; };
 		B282501928FE90DE00450060 /* TheoryKnowledgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryKnowledgeView.swift; sourceTree = "<group>"; };
 		B282501B28FE910600450060 /* Knowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knowledge.swift; sourceTree = "<group>"; };
@@ -46,15 +61,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BAE1C029015E10002B9889 /* AlertX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90BAE1B129015C1B002B9889 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90BAE1B429015C4C002B9889 /* backgroundview.swift */,
+				90BAE1C529016042002B9889 /* NegotiationView.swift */,
+				90BAE1C129015EE3002B9889 /* feedbackView.swift */,
+				B20B2D8728E6B7EB007E690D /* TheoryView.swift */,
+				B2C62CBF28E6E8D30004B988 /* TutorialView.swift */,
+				B2C62CC128E6E8DD0004B988 /* HistoryView.swift */,
+				B2A90C0C28E2DDBE00650F1C /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90BAE1B829015C72002B9889 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90BAE1B929015C89002B9889 /* SwiftUISpeech.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90BAE1BD29015D1D002B9889 /* Model View */ = {
+			isa = PBXGroup;
+			children = (
+				90BAE1BB29015CF7002B9889 /* SpeechButton.swift */,
+			);
+			path = "Model View";
+			sourceTree = "<group>";
+		};
 		B282502529004F1600450060 /* theoryData */ = {
 			isa = PBXGroup;
 			children = (
+				90BAE1B629015C60002B9889 /* storyDetailData.swift */,
+				90BAE1B229015C3C002B9889 /* storyData.swift */,
 				B282501F290010D500450060 /* Matrix.swift */,
 				B282501B28FE910600450060 /* Knowledge.swift */,
 			);
@@ -91,10 +139,9 @@
 			children = (
 				B282502629004F2F00450060 /* theorySubView */,
 				B282502529004F1600450060 /* theoryData */,
-				B20B2D8728E6B7EB007E690D /* TheoryView.swift */,
-				B2C62CBF28E6E8D30004B988 /* TutorialView.swift */,
-				B2C62CC128E6E8DD0004B988 /* HistoryView.swift */,
-				B2A90C0C28E2DDBE00650F1C /* HomeView.swift */,
+				90BAE1BD29015D1D002B9889 /* Model View */,
+				90BAE1B829015C72002B9889 /* Model */,
+				90BAE1B129015C1B002B9889 /* View */,
 				B2A90BF528E18CA800650F1C /* macroProjectApp.swift */,
 				B2A90BF728E18CA800650F1C /* ContentView.swift */,
 				B2A90BF928E18CA900650F1C /* Assets.xcassets */,
@@ -129,6 +176,9 @@
 			dependencies = (
 			);
 			name = macroProject;
+			packageProductDependencies = (
+				90BAE1BF29015E10002B9889 /* AlertX */,
+			);
 			productName = macroProject;
 			productReference = B2A90BF228E18CA800650F1C /* macroProject.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +207,9 @@
 				Base,
 			);
 			mainGroup = B2A90BE928E18CA800650F1C;
+			packageReferences = (
+				90BAE1BE29015E10002B9889 /* XCRemoteSwiftPackageReference "AlertX" */,
+			);
 			productRefGroup = B2A90BF328E18CA800650F1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,18 +236,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */,
+				90BAE1BA29015C89002B9889 /* SwiftUISpeech.swift in Sources */,
 				B2C62CC028E6E8D30004B988 /* TutorialView.swift in Sources */,
 				B2C62CC228E6E8DD0004B988 /* HistoryView.swift in Sources */,
 				B2825024290011DA00450060 /* TheoryMatrixView.swift in Sources */,
 				B2A90BFF28E18CA900650F1C /* Persistence.swift in Sources */,
 				B282501A28FE90DE00450060 /* TheoryKnowledgeView.swift in Sources */,
 				B282501C28FE910600450060 /* Knowledge.swift in Sources */,
+				90BAE1B729015C60002B9889 /* storyDetailData.swift in Sources */,
 				B20B2D8828E6B7EB007E690D /* TheoryView.swift in Sources */,
+				90BAE1BC29015CF7002B9889 /* SpeechButton.swift in Sources */,
+				90BAE1C629016042002B9889 /* NegotiationView.swift in Sources */,
 				B2A90BF828E18CA800650F1C /* ContentView.swift in Sources */,
 				B2825020290010D500450060 /* Matrix.swift in Sources */,
+				90BAE1B329015C3C002B9889 /* storyData.swift in Sources */,
 				B2A90C0228E18CA900650F1C /* macroProject.xcdatamodeld in Sources */,
 				B2A90C0D28E2DDBE00650F1C /* HomeView.swift in Sources */,
 				B2A90BF628E18CA800650F1C /* macroProjectApp.swift in Sources */,
+				90BAE1C229015EE3002B9889 /* feedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,11 +386,12 @@
 				DEVELOPMENT_TEAM = QUPYT94598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Accepting this means you are willing to have your information sent to Apple for processing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,11 +416,12 @@
 				DEVELOPMENT_TEAM = QUPYT94598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Accepting this means you are willing to have your information sent to Apple for processing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90BAE1BE29015E10002B9889 /* XCRemoteSwiftPackageReference "AlertX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90BAE1BF29015E10002B9889 /* AlertX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90BAE1BE29015E10002B9889 /* XCRemoteSwiftPackageReference "AlertX" */;
+			productName = AlertX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B2A90C0028E18CA900650F1C /* macroProject.xcdatamodeld */ = {

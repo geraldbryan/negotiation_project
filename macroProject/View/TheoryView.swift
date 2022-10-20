@@ -26,7 +26,7 @@ struct TheoryView: View {
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(width: 25, height: 25)
-                .background(Color("backButtonColor"))
+                .background(Color("green_tone"))
                 .clipShape(Circle())
                 .frame(alignment: .topLeading)
             
@@ -44,7 +44,7 @@ struct TheoryView: View {
     var body: some View {
         ScrollView(){
             ZStack{
-                Color("backgroundColor").ignoresSafeArea()
+                Color("yellow_tone").ignoresSafeArea()
                 
                 VStack{
                     VStack{
@@ -67,9 +67,9 @@ struct TheoryView: View {
                                     .offset(x: 10)
                             }
                             .navigationBarBackButtonHidden(true)
-                                .background(Color("backgroundColor"))
+                                .background(Color("yellow_tone"))
                                 .listRowSeparator(.hidden)
-                                .listRowBackground(Color("backgroundColor"))
+                                .listRowBackground(Color("yellow_tone"))
                         }
                         .padding(.top)
                         .scrollContentBackground(.hidden)
@@ -98,9 +98,9 @@ struct TheoryView: View {
                             }
 
                             .navigationBarBackButtonHidden(true)
-                                .background(Color("backgroundColor"))
+                                .background(Color("yellow_tone"))
                                 .listRowSeparator(.hidden)
-                                .listRowBackground(Color("backgroundColor"))
+                                .listRowBackground(Color("yellow_tone"))
                         }
                         .padding(.top)
                         .scrollContentBackground(.hidden)

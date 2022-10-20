@@ -18,7 +18,7 @@ struct HistoryView: View {
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(width: 25, height: 25)
-                .background(Color("backButtonColor"))
+                .background(Color("green_tone"))
                 .clipShape(Circle())
                 .frame(alignment: .topLeading)
             
@@ -36,7 +36,7 @@ struct HistoryView: View {
         ScrollView(){
             
             ZStack{
-                Color("backgroundColor").ignoresSafeArea()
+                Color("yellow_tone").ignoresSafeArea()
                 VStack(spacing: 20){
                         
                     Image("emptyHistory")
