@@ -79,7 +79,7 @@ struct HomeView: View {
                                 .foregroundColor(.black)
                                 .frame(width: 363, height: 120)
                         })
-                        .background(Color("GreenColor"))
+                        .background(Color("green_tone"))
                         .cornerRadius(30)
                     }
                     Spacer(minLength: 80)

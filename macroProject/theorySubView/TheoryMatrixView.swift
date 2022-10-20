@@ -19,7 +19,7 @@ struct TheoryMatrixView: View{
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(width: 25, height: 25)
-                .background(Color("backButtonColor"))
+                .background(Color("green_tone"))
                 .clipShape(Circle())
                 .frame(alignment: .topLeading)
             
@@ -47,7 +47,7 @@ struct TheoryMatrixView: View{
                             Text("Definition")
                         }.frame(width: 340, height: 20, alignment: .leading)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         
                         Text(matrix.definition)
                             .font(.system(size: 15, weight: .light))
@@ -60,7 +60,7 @@ struct TheoryMatrixView: View{
                             Text("Implementation")
                         }.frame(width: 340, height: 20, alignment: .leading)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
@@ -84,7 +84,7 @@ struct TheoryMatrixView: View{
                             Text("Example")
                         }.frame(width: 340, height: 20, alignment: .leading)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         
                         Text(matrix.example)
                             .font(.system(size: 15, weight: .light))
@@ -120,7 +120,7 @@ struct TheoryMatrixView: View{
                             Text("Advantages")
                         }.frame(width: 340, height: 20, alignment: .leading)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
@@ -161,7 +161,7 @@ struct TheoryMatrixView: View{
                             Text("Disadvantages")
                         }.frame(width: 340, height: 20, alignment: .leading)
                             .font(.system(size: 25, weight: .bold))
-                            .foregroundColor(Color("backButtonColor"))
+                            .foregroundColor(Color("green_tone"))
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
@@ -204,7 +204,7 @@ struct TheoryMatrixView: View{
                             Text(matrix.urlName)
                                 .font(.system(size: 15, weight: .bold))
                                 .frame(width: 350, height: 20)
-                                .foregroundColor(Color("backButtonColor"))
+                                .foregroundColor(Color("green_tone"))
                             Link(destination: matrix.url, label: {
                                 Text(matrix.urlText)
                                     .font(.system(size: 15, weight: .light))
