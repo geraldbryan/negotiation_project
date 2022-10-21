@@ -87,7 +87,7 @@ var myQuiz1 : [QuizModel] = [
     answer: ["Ok, here is your money", "No, whatever", "Alright, how much the additional fee is?"],
     load_ques: [101,9,10],
     questionKey: 8,
-    feedbackString: ["None", "None", "None"],
+    feedbackString: ["You used the “Avoiding” style. There are no objectives achieved, better try again!", "None", "None"],
     medal: ["full_medal", "no_medal", "half_medal"]),
 
     QuizModel(img: "background",
@@ -95,7 +95,7 @@ var myQuiz1 : [QuizModel] = [
     answer: ["Ok, sorry, here is your money", "Then complete it in three days", "Go ahead, I do not care"],
     load_ques: [101,7,101],
     questionKey: 9,
-    feedbackString: ["None", "None", "None"],
+    feedbackString: ["You used the “Avoiding” style. There are no objectives achieved, better try again!", "None", "You used the “Avoiding” style. There are no objectives achieved, better try again!"],
     medal: ["full_medal", "no_medal", "half_medal"]),
 
     QuizModel(img: "background",
@@ -103,7 +103,7 @@ var myQuiz1 : [QuizModel] = [
     answer: ["I am ok with that", "Lower it, $10 maximum", "We can only give you an extra $10, how about that?"],
     load_ques: [102,11,11],
     questionKey: 10,
-    feedbackString: ["None", "None", "None"],
+    feedbackString:  ["You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”.", "None", "None"],
     medal: ["full_medal", "no_medal", "half_medal"]),
 
     QuizModel(img: "background",
@@ -119,7 +119,7 @@ var myQuiz1 : [QuizModel] = [
     answer: ["Yes, thank you", "I will, see you on three days", "Yes, Pleasure to work with you"],
     load_ques: [102,102,102],
     questionKey: 12,
-    feedbackString: ["None", "None", "None"],
+    feedbackString: ["You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”", "You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”", "You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”"],
     medal: ["full_medal", "no_medal", "half_medal"]),
 
     QuizModel(img: "background",
@@ -127,7 +127,7 @@ var myQuiz1 : [QuizModel] = [
     answer: ["Alright, I will come back here in 3 days", "Thank you, it is a pleasure to work with you", "Deal, thank you for your cooperation"],
     load_ques: [100,100,100],
     questionKey: 13,
-    feedbackString: ["None", "None", "None"],
+    feedbackString: ["You used the “Accommodating” style. The objectives and relationship with your opponent are well managed.", "You used the “Accommodating” style. The objectives and relationship with your opponent are well managed.", "You used the “Accommodating” style. The objectives and relationship with your opponent are well managed."],
     medal: ["full_medal", "no_medal", "half_medal"])
 
 
