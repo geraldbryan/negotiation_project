@@ -24,18 +24,18 @@ struct backgroundview: View {
                                 Text("\(storyDetail[0].title!)")
                                     .foregroundColor(Color("green_tone"))
                                     .font(.system(size: 32))
-                                    .fontWeight(.bold).padding(.top,80)
+                                    .fontWeight(.bold).padding(.top,80).foregroundColor(.black)
                             }.frame(width:300, height: 160, alignment: .center)
                             
-                            Text("\(storyDetail[0].text!)").frame(width:300).font(.system(size: 16)).padding(.leading,14)
+                            Text("\(storyDetail[0].text!)").frame(width:300).font(.system(size: 16)).padding(.leading,14).foregroundColor(.black)
                             
                             Text("Details :").font(.system(size: 20))
-                                .fontWeight(.bold).padding(.leading, 14)
-                            Text("\(storyDetail[0].details!)").frame(width:300).lineSpacing(-10).padding(.top,-10).font(.system(size: 16))
+                                .fontWeight(.bold).padding(.leading, 14).foregroundColor(.black)
+                            Text("\(storyDetail[0].details!)").frame(width:300).lineSpacing(-10).padding(.top,-10).font(.system(size: 16)).foregroundColor(.black)
                             
                             Text("Objectives :").font(.system(size: 20))
-                                .fontWeight(.bold).padding(.leading, 14)
-                            Text("\(storyDetail[0].objectives!)").frame(width:300).padding(.leading,-18).padding(.top,-10).font(.system(size: 16))
+                                .fontWeight(.bold).padding(.leading, 14).foregroundColor(.black)
+                            Text("\(storyDetail[0].objectives!)").frame(width:300).padding(.leading,-18).padding(.top,-10).font(.system(size: 16)).foregroundColor(.black)
                             Spacer()
                         }
                         

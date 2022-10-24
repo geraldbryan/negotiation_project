@@ -35,7 +35,7 @@ struct NegotiationView: View {
                         Image("background")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width:390, height: 300)
+                            .frame(height: 300).frame(maxWidth: .infinity)
                         HStack {
                             NavigationLink(destination: HomeView(), isActive: $activateLink,
                                            label: { EmptyView() })
@@ -66,7 +66,7 @@ struct NegotiationView: View {
                         }
                         ZStack{
                             Image("chatbox")
-                            Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10)
+                            Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black)
                         }.padding(.top,300)
                     }.padding(.bottom,50)
                     
@@ -188,7 +188,7 @@ struct NegotiationView: View {
                                 }.padding(.top,80)
                             }
                         }
-                    }
+                    }.offset(y:20)
                     
                     Spacer()
                 }

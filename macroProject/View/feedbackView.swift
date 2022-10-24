@@ -35,7 +35,10 @@ struct feedbackView: View {
         ZStack{
             Color("green_tone").ignoresSafeArea()
             VStack{
-                Image("feedback_shape").frame(width:390, height:631).ignoresSafeArea().padding(.top, 213)
+                Image("feedback_shape")
+                    .frame(height:631)
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea().padding(.top, 213)
             }
             VStack{
                 Image("\(self.swiftUISpeech.medal)")

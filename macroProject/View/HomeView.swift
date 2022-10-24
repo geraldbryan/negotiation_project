@@ -33,6 +33,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .kerning(0.3)
                             .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
+                            .foregroundColor(.black)
                     }
                     
                     
@@ -67,6 +68,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .kerning(0.3)
                             .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
+                            .foregroundColor(.black)
                     }
                     
                     //ini tombolnya be buat start button
