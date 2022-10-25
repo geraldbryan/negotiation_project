@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct feedbackView: View {
+    
+    @State var isRootView: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
         var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
+            self.isRootView.toggle()
         }){
             HStack{
                 Image(systemName: "xmark.circle.fill")
@@ -31,8 +34,13 @@ struct feedbackView: View {
         }
     
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
+    
     var body: some View {
         ZStack{
+            NavigationLink(destination: HomeView(), isActive: $isRootView){
+                EmptyView()
+            }
+            
             Color("green_tone").ignoresSafeArea()
             
             RoundedRectangle(cornerRadius: 25)
@@ -50,7 +58,7 @@ struct feedbackView: View {
                                     .fill(Color("green_tone"))
                                     .frame(width: 365, height: 78).cornerRadius(10).padding(12)
                     Text("\(self.swiftUISpeech.text)")
-                        .font(.system(size: 14)).foregroundColor(.white).padding(.horizontal,12)
+                        .font(.system(size: 14)).foregroundColor(.white).frame(width: 345, height: 78).padding(.horizontal,20)
                 }
                 Image("matrix")
                     .frame(width: 346, height: 67).padding(12)

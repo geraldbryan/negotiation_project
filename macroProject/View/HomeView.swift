@@ -23,11 +23,11 @@ struct HomeView: View {
                 
                 VStack(spacing: 20){
                     HStack{
-                        Image("oi")
+                        Image("home_image")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 280)
-                            .padding()
+                            .frame(maxWidth: .infinity)
                     }
                     
                     HStack(alignment: .bottom){
