@@ -124,7 +124,7 @@ var myQuiz1 : [QuizModel] = [
 
     QuizModel(img: "background",
     text: "What a good deal, I take that",
-    answer: ["Alright, I will come back here in 3 days", "Thank you, it is a pleasure to work with you", "Deal, thank you for your cooperation"],
+    answer: ["All right, I will come back here in three days", "Thank you, it is a pleasure to work with you", "Deal, thank you for your cooperation"],
     load_ques: [100,100,100],
     questionKey: 13,
     feedbackString: ["You used the “Accommodating” style. The objectives and relationship with your opponent are well managed.", "You used the “Accommodating” style. The objectives and relationship with your opponent are well managed.", "You used the “Accommodating” style. The objectives and relationship with your opponent are well managed."],

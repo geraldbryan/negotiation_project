@@ -51,12 +51,12 @@ struct TheoryView: View {
                         Text("Negotiation Matrix")
                             .font(.system(size: 25, weight: .bold))
                             .frame(width: 350, alignment: .leading)
-                            .offset(x:0, y: 20)
+                            .offset(x:0, y: 20).foregroundColor(Color.black)
                         
                         Text("Based on Lewicki & Hiam’s Matrix to improve style implementation knowledge when doing negotiation.")
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, alignment: .leading)
-                            .offset(x:0, y: 30)
+                            .offset(x:0, y: 30).foregroundColor(Color.black)
 
                         List(matrix, id: \.id){ matrixItem in
                             NavigationLink(destination: TheoryMatrixView(matrix: matrixItem)){
@@ -81,12 +81,12 @@ struct TheoryView: View {
                         Text("Negotiation Knowledge")
                             .font(.system(size: 25, weight: .bold))
                             .frame(width: 350, alignment: .leading)
-                            .offset(x:0, y: 20)
+                            .offset(x:0, y: 20).foregroundColor(Color.black)
                         
                         Text("Interesting ways on improving negotiation skills special created by Negotio.")
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, alignment: .leading)
-                            .offset(x:0, y: 30)
+                            .offset(x:0, y: 30).foregroundColor(Color.black)
 
                         List(knowledges, id: \.id){ knowledgeItem in
                             NavigationLink(destination: TheoryKnowledgeView(knowledge: knowledgeItem)){

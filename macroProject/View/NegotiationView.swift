@@ -65,9 +65,12 @@ struct NegotiationView: View {
                             }
                         }
                         ZStack{
-                            Image("chatbox")
-                            Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black)
-                        }.padding(.top,300)
+                            Image("negotiator")
+                            ZStack{
+                                Image("chatbox")
+                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black)
+                            }.padding(.top,300)
+                        }
                     }.padding(.bottom,50)
                     
                     VStack(spacing: 20){
@@ -240,7 +243,7 @@ struct NegotiationView: View {
         }else{
             if self.swiftUISpeech.isRecording{
                 self.answer.toggle()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                 self.swiftUISpeech.stopRecording()
             } } else { self.swiftUISpeech.startRecording() }
             self.swiftUISpeech.isRecording.toggle()
