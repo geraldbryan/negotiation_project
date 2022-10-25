@@ -8,13 +8,23 @@
 import SwiftUI
 import AlertX
 
+struct RoundedCornersCustom: Shape {
+    let corners: UIRectCorner
+    let radius: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect,
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
 struct HomeView: View {
     
     @State private var showAlert = false
     
     var body: some View {
-        
-//        edgesIgnoringSafeArea cari nih
         
         NavigationView{
             
@@ -22,13 +32,26 @@ struct HomeView: View {
                 Color("yellow_tone").ignoresSafeArea()
                 
                 VStack(spacing: 20){
-                    HStack{
-                        Image("home_image")
+                    
+                    ZStack{
+                        Image("hand")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 280)
-                            .frame(maxWidth: .infinity)
-                    }
+                            .frame(width: 200, height: 150)
+                        Image("bulb")
+                            .offset(x: 150, y: -70)
+                        Image("coin")
+                            .offset(x: -120, y: 70)
+                        Image("panah")
+                            .offset(x:-150, y: -70)
+                        Image("graph")
+                            .offset(x: 120, y: 70)
+                    }.background(
+                        RoundedCornersCustom(corners: [.bottomRight], radius: 100)
+                            .fill(Color("kotak"))
+                            .frame(width: 430,height: 350)
+                            .shadow(radius: 15)
+                    )
+                    .frame(height: 330)
                     
                     HStack(alignment: .bottom){
                         Text("Menu")

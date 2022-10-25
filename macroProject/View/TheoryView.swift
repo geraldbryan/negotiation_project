@@ -50,11 +50,13 @@ struct TheoryView: View {
                     VStack{
                         Text("Negotiation Matrix")
                             .font(.system(size: 25, weight: .bold))
+                            .foregroundColor(Color(.black))
                             .frame(width: 350, alignment: .leading)
                             .offset(x:0, y: 20).foregroundColor(Color.black)
                         
                         Text("Based on Lewicki & Hiam’s Matrix to improve style implementation knowledge when doing negotiation.")
                             .font(.system(size: 15, weight: .light))
+                            .foregroundColor(Color(.black))
                             .frame(width: 350, alignment: .leading)
                             .offset(x:0, y: 30).foregroundColor(Color.black)
 
@@ -79,11 +81,13 @@ struct TheoryView: View {
                     
                     VStack{
                         Text("Negotiation Knowledge")
+                            .foregroundColor(Color(.black))
                             .font(.system(size: 25, weight: .bold))
                             .frame(width: 350, alignment: .leading)
                             .offset(x:0, y: 20).foregroundColor(Color.black)
                         
                         Text("Interesting ways on improving negotiation skills special created by Negotio.")
+                            .foregroundColor(Color(.black))
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, alignment: .leading)
                             .offset(x:0, y: 30).foregroundColor(Color.black)

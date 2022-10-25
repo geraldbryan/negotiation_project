@@ -52,6 +52,7 @@ struct TheoryMatrixView: View{
                         Text(matrix.definition)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 340, height: 100, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }
                     
                     VStack{
@@ -64,17 +65,21 @@ struct TheoryMatrixView: View{
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.imp1)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.imp2)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                     }.offset(y:20)
                     
@@ -89,6 +94,7 @@ struct TheoryMatrixView: View{
                         Text(matrix.example)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 340, height: 140, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -100,16 +106,20 @@ struct TheoryMatrixView: View{
                                     .font(.system(size: 15, weight: .bold))
                                     .frame(width: 350, height: 20, alignment: .leading)
                                     .offset(x: 10)
+                                    .foregroundColor(Color(.black))
                                 Text(matrix.subinfo1)
                                     .font(.system(size: 15, weight: .light))
                                     .frame(width: 330, height: 60)
+                                    .foregroundColor(Color(.black))
                                 Text(matrix.sub2)
                                     .font(.system(size: 15, weight: .bold))
                                     .frame(width: 350, height: 20, alignment: .leading)
                                     .offset(x: 10)
+                                    .foregroundColor(Color(.black))
                                 Text(matrix.subinfo2)
                                     .font(.system(size: 15, weight: .light))
                                     .frame(width: 330, height: 60)
+                                    .foregroundColor(Color(.black))
                             }
                         }
                     }.offset(y:60)
@@ -124,33 +134,41 @@ struct TheoryMatrixView: View{
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.advan1)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.advan2)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.advan3)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.advan4)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                     }.offset(y:100)
                     
@@ -165,33 +183,41 @@ struct TheoryMatrixView: View{
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.dis1)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.dis2)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.dis3)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 360)
                         HStack{
                             Image(systemName: "circle.fill")
                                 .font(.system(size: 5))
+                                .foregroundColor(Color(.black))
                             Text(matrix.dis4)
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 340, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                     }.offset(y:140)
                     
@@ -209,6 +235,7 @@ struct TheoryMatrixView: View{
                                 Text(matrix.urlText)
                                     .font(.system(size: 15, weight: .light))
                                     .frame(width: 330, height: 50, alignment: .center)
+                                    .foregroundColor(Color(.black))
                             })
                         }
                     }.offset(y: 150)
