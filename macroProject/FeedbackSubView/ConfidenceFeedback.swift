@@ -24,7 +24,7 @@ struct ConfidenceFeedback: View{
             
             Text("  Confidence")
                 .font(.system(size: 28, weight: .bold))
-                .foregroundColor(Color.black)
+                .foregroundColor(Color(.black))
                 .frame(alignment: .topLeading)
             
             }
@@ -39,11 +39,12 @@ struct ConfidenceFeedback: View{
                 VStack{
                     Text("Once you have observed and understood the situation, the way you present your argument determines the direction of the negotiation. Make sure you deliver it with clear pronunciation, intonation, and confidence.")
                         .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(Color(.black))
                         .frame(width: 350, height: 80, alignment: .leading)
                     
                     Text("Performance Evaluation")
                         .font(.system(size: 25, weight: .bold))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(.black))
                         .frame(width: 350, height: 60, alignment: .leading)
                         .offset(y: 15)
                     
@@ -65,6 +66,7 @@ struct ConfidenceFeedback: View{
                             Text("Your confidence is good. The intonation and pronunciation are clear.")
                                 .font(.system(size: 17, weight: .light))
                                 .frame(width: 350, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }.offset(y: 0)
                         Divider().frame(width: 350)
                     }.frame(height: 260)
@@ -87,6 +89,7 @@ struct ConfidenceFeedback: View{
                             Text("Your confidence is good. The intonation and pronunciation are clear.")
                                 .font(.system(size: 17, weight: .light))
                                 .frame(width: 350, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }.offset(y: 0)
                         Divider().frame(width: 350)
                     }.frame(height: 200)
@@ -109,6 +112,7 @@ struct ConfidenceFeedback: View{
                             Text("Your confidence is good. The intonation and pronunciation are clear.")
                                 .font(.system(size: 17, weight: .light))
                                 .frame(width: 350, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }
                         Divider().frame(width: 350)
                     }.frame(height: 200)
@@ -125,7 +129,7 @@ struct ConfidenceFeedback: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBackMatrixFeedback)
-        }.ignoresSafeArea()
+        }
     }
 }
 

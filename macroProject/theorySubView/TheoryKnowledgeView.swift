@@ -44,6 +44,7 @@ struct TheoryKnowledgeView: View{
                         .foregroundColor(Color("green_tone"))
                     
                     Text(knowledge.brief)
+                        .foregroundColor(Color(.black))
                         .font(.system(size: 15, weight: .semibold))
                         .frame(width: 350, height: 40, alignment: .leading)
                     
@@ -61,6 +62,7 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.infoTitle1)
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 30, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         Image(systemName:"text.badge.star")
                             .font(.system(size: 40, weight: .bold))
                             .foregroundColor(Color("green_tone"))
@@ -69,12 +71,14 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.info1)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 60, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 30)
                     
                     VStack{
                         Text(knowledge.infoTitle2)
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 30, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         Image(systemName:"star.leadinghalf.filled")
                             .font(.system(size: 40, weight: .bold))
                             .foregroundColor(Color("green_tone"))
@@ -83,12 +87,14 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.info2)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 60, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 50)
                     
                     VStack{
                         Text(knowledge.infoTitle3)
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 30, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         Image(systemName:"person.2")
                             .font(.system(size: 40, weight: .bold))
                             .foregroundColor(Color("green_tone"))
@@ -97,12 +103,14 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.info3)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 60, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 70)
                     
                     VStack{
                         Text(knowledge.infoTitle4)
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 30, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         Image(systemName:"ear")
                             .font(.system(size: 40, weight: .bold))
                             .foregroundColor(Color("green_tone"))
@@ -111,12 +119,14 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.info4)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 60, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 90)
                     
                     VStack{
                         Text(knowledge.infoTitle5)
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 30, alignment: .leading)
+                            .foregroundColor(Color(.black))
                         Image(systemName:"list.bullet")
                             .font(.system(size: 40, weight: .bold))
                             .foregroundColor(Color("green_tone"))
@@ -125,6 +135,7 @@ struct TheoryKnowledgeView: View{
                         Text(knowledge.info5)
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 60, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 110)
                     
                     VStack{
@@ -136,7 +147,7 @@ struct TheoryKnowledgeView: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack2)
-        }.ignoresSafeArea()
+        }
     }
 }
 

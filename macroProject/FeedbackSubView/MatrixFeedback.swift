@@ -39,6 +39,7 @@ struct MatrixFeedback: View{
                 VStack{
                     Text("Matrix evaluation can help you in designing \na mindset for decision making and style application. The rating will depend on the \nanswer you choose.")
                         .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(Color(.black))
                         .frame(width: 350, height: 80, alignment: .leading)
                     
                     Text("Best Style Implementation")
@@ -60,6 +61,7 @@ struct MatrixFeedback: View{
                         Text("The printing company stated that they willing to speed up the order with extra charge of they wanted. up the order with extra charge of they wanted. ")
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 80, alignment: .leading)
+                            .foregroundColor(Color(.black))
                     }.offset(y: 30)
                     
                     Text("Answer Evaluation")
@@ -78,6 +80,7 @@ struct MatrixFeedback: View{
                                 Text("For you order, the normal production time required is 7 days")
                                     .font(.system(size: 15, weight: .light))
                                     .frame(width: 230, height: 60, alignment: .center)
+                                    .foregroundColor(Color(.black))
                             }
                         }.frame(width: 70,height: 100, alignment: .trailing)
                             .offset(x: 40, y: 40)
@@ -100,6 +103,7 @@ struct MatrixFeedback: View{
                             Text("By explaining the reason of your offer with polite word and expression, you can maintain the relationship")
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 350, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }.offset(y: 60)
                         Divider().frame(width: 350).offset(y: 60)
                     }.frame(height: 260)
@@ -114,6 +118,7 @@ struct MatrixFeedback: View{
                                 Text("It seems difficult to complete in 3 days, the workload will also make it difficult for our employees")
                                     .font(.system(size: 15, weight: .light))
                                     .frame(width: 230, height: 60, alignment: .center)
+                                    .foregroundColor(Color(.black))
                             }
                         }.frame(width: 70,height: 100, alignment: .trailing)
                             .offset(x: 40, y: 70)
@@ -136,6 +141,7 @@ struct MatrixFeedback: View{
                             Text("The answer you choose is correct. Be sure to explain the reason for the offer you are making and use polite word and expression.")
                                 .font(.system(size: 15, weight: .light))
                                 .frame(width: 350, height: 80, alignment: .leading)
+                                .foregroundColor(Color(.black))
                         }.offset(y: 90)
                         Divider().frame(width: 350).offset(y: 90)
                     }.frame(height: 350)
@@ -150,7 +156,7 @@ struct MatrixFeedback: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBackMatrixFeedback)
-        }.ignoresSafeArea()
+        }
     }
 }
 
