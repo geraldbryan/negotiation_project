@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import AlertX
 
 struct HomeView: View {
+    
+    @State private var showAlert = false
     
     var body: some View {
         
@@ -53,12 +56,27 @@ struct HomeView: View {
                         })
                         .cornerRadius(10)
                         
-                        NavigationLink(destination: TutorialView(), label: {
+                        Button(action: {self.showAlert.toggle()}) {
                             Image("Tutorial_button")
                                 .foregroundColor(.black)
                                 .frame(width: 115, height: 150)
-                        })
+                        }
                         .cornerRadius(10)
+                        .alertX(isPresented: $showAlert, content: {
+                            AlertX(title: Text("We are sorry").fontWeight(.bold),
+                                   message: Text("We are very sorry this tutorial page hasn't been finished develop yet. Don't worry you still can practice the negotiation."),
+                                   primaryButton: .cancel(Text("Okay")),
+                                   theme: .custom(windowColor: .white,
+                                                  alertTextColor: .black,
+                                                  enableShadow: false,
+                                                  enableRoundedCorners: true,
+                                                  enableTransparency: false,
+                                                  cancelButtonColor: Color("green_tone"),
+                                                  cancelButtonTextColor: .white,
+                                                  defaultButtonColor: Color("yellow_tone"),
+                                                  defaultButtonTextColor: Color("green_tone"),
+                                                  roundedCornerRadius: 10))
+                        })
                     }
                     .frame(maxWidth: 300, maxHeight: 200)
                     
