@@ -136,7 +136,7 @@ struct TheoryKnowledgeView: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack2)
-        }
+        }.ignoresSafeArea()
     }
 }
 

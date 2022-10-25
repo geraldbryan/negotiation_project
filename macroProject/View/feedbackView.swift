@@ -34,12 +34,13 @@ struct feedbackView: View {
     var body: some View {
         ZStack{
             Color("green_tone").ignoresSafeArea()
-            VStack{
-                Image("feedback_shape")
-                    .frame(height:631)
-                    .frame(maxWidth: .infinity)
-                    .ignoresSafeArea().padding(.top, 213)
-            }
+            
+            RoundedRectangle(cornerRadius: 25)
+                .foregroundColor(Color("yellow_tone"))
+                .shadow(radius: 2)
+                .frame(height: 750)
+                .frame(maxWidth: .infinity)
+                .offset(y: 180)
             VStack{
                 Image("\(self.swiftUISpeech.medal)")
                     .frame(width: 389, height: 389,alignment: .center).padding(.top,-50)
