@@ -13,11 +13,11 @@ struct ContentView: View {
     
     var body: some View{
         
-        if currentPage > totalPages{
+        //if currentPage > totalPages{
             Home()
-        }else{
-            WalkthroughScreen()
-        }
+        //}else{
+            //WalkthroughScreen()
+        //}
     }
 }
 
