@@ -28,7 +28,6 @@ struct ConfidenceFeedback: View{
                 .frame(alignment: .topLeading)
             
             }
-        .frame(width: 360, height: 100, alignment: .leading)
         }
     }
     
@@ -129,6 +128,12 @@ struct ConfidenceFeedback: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBackMatrixFeedback)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(
+                Color.white,
+                for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .preferredColorScheme(.light)
         }
     }
 }

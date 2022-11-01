@@ -249,6 +249,12 @@ struct TheoryMatrixView: View{
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack3)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
     }
 }
 

@@ -34,9 +34,8 @@ struct TheoryView: View {
                 .font(.system(size: 28, weight: .bold))
                 .foregroundColor(Color.black)
                 .frame(alignment: .topLeading)
-            
             }
-    }
+        }
     }
     
     var knowledges: [Knowledge] = KnowledgeList.knowledgeData
@@ -119,6 +118,12 @@ struct TheoryView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
     }
 }
 

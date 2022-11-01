@@ -67,8 +67,13 @@ struct feedbackView: View {
                     .frame(width: 346, height: 67).padding(.horizontal,12)
             }
         }.navigationBarItems(leading: btnBack)
-            .navigationBarBackButtonHidden(true)
-            
+        .navigationBarBackButtonHidden(true)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
     }
 }
 

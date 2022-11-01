@@ -147,6 +147,12 @@ struct TheoryKnowledgeView: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack2)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(
+                Color.white,
+                for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .preferredColorScheme(.light)
         }
     }
 }

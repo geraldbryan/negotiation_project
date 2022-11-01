@@ -28,7 +28,7 @@ struct HistoryView: View {
                 .frame(alignment: .topLeading)
             
             }
-    }
+        }
     }
     
     var body: some View {
@@ -40,8 +40,6 @@ struct HistoryView: View {
                 VStack(spacing: 20){
                         
                     Image("emptyHistory")
-                        
-//                    Spacer(minLength: 80)
 
                 }.frame(height: 750)
                     .offset(y: -50)
@@ -51,8 +49,14 @@ struct HistoryView: View {
             //ini headernya
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
-//            .shadow(color: .black, radius: 1)
             
+            //make navbar color to white
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(
+                Color.white,
+                for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .preferredColorScheme(.light)
         }
     }
 }

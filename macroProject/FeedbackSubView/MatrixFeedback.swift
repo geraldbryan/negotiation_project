@@ -156,6 +156,12 @@ struct MatrixFeedback: View{
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBackMatrixFeedback)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(
+                Color.white,
+                for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .preferredColorScheme(.light)
         }
     }
 }
