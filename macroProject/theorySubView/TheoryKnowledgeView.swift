@@ -34,9 +34,9 @@ struct TheoryKnowledgeView: View{
     }
     
     var body: some View{
-        ScrollView(){
-            ZStack{
-                Color("yellow_tone").ignoresSafeArea()
+        ZStack{
+            Color("yellow_tone").ignoresSafeArea()
+            ScrollView(){
                 VStack{
                     Text(knowledge.title)
                         .font(.system(size: 30, weight: .bold))
@@ -145,15 +145,17 @@ struct TheoryKnowledgeView: View{
                     }
                 }.offset(y: 50)
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack2)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(
-                Color.white,
-                for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .preferredColorScheme(.light)
+            .scrollIndicators(.hidden)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack2)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
+        .frame(maxHeight: .infinity)
     }
 }
 

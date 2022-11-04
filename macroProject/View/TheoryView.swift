@@ -41,10 +41,10 @@ struct TheoryView: View {
     var knowledges: [Knowledge] = KnowledgeList.knowledgeData
     var matrix: [Matrix] = MatrixList.matrixData
     var body: some View {
-        ScrollView(){
-            ZStack{
-                Color("yellow_tone").ignoresSafeArea()
-                
+        ZStack{
+            Color("yellow_tone").ignoresSafeArea()
+            
+            ScrollView(){
                 VStack{
                     VStack{
                         Text("Negotiation Matrix")
@@ -113,8 +113,7 @@ struct TheoryView: View {
                     .frame(height: 300)
                 }
                 
-            }.ignoresSafeArea()
-            .frame(height: 900)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
@@ -124,6 +123,7 @@ struct TheoryView: View {
             for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .preferredColorScheme(.light)
+        .frame(maxHeight: .infinity)
     }
 }
 

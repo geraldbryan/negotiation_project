@@ -255,6 +255,7 @@ struct TheoryMatrixView: View{
             for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .preferredColorScheme(.light)
+        .scrollIndicators(.hidden)
     }
 }
 

@@ -33,9 +33,9 @@ struct MatrixFeedback: View{
     }
     
     var body: some View{
-        ScrollView(){
-            ZStack{
-                Color("yellow_tone").ignoresSafeArea()
+        ZStack{
+            Color("yellow_tone").ignoresSafeArea()
+            ScrollView(){
                 VStack{
                     Text("Matrix evaluation can help you in designing \na mindset for decision making and style application. The rating will depend on the \nanswer you choose.")
                         .font(.system(size: 15, weight: .semibold))
@@ -154,15 +154,16 @@ struct MatrixFeedback: View{
                     }
                 }.offset(y: 50)
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBackMatrixFeedback)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(
-                Color.white,
-                for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .preferredColorScheme(.light)
+            .scrollIndicators(.hidden)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBackMatrixFeedback)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
     }
 }
 

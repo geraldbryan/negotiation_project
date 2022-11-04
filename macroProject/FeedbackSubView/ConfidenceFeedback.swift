@@ -32,9 +32,9 @@ struct ConfidenceFeedback: View{
     }
     
     var body: some View{
-        ScrollView(){
-            ZStack{
-                Color("yellow_tone").ignoresSafeArea()
+        ZStack{
+            Color("yellow_tone").ignoresSafeArea()
+            ScrollView(){
                 VStack{
                     Text("Once you have observed and understood the situation, the way you present your argument determines the direction of the negotiation. Make sure you deliver it with clear pronunciation, intonation, and confidence.")
                         .font(.system(size: 15, weight: .semibold))
@@ -126,15 +126,16 @@ struct ConfidenceFeedback: View{
                     }
                 }.offset(y: 50)
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBackMatrixFeedback)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(
-                Color.white,
-                for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .preferredColorScheme(.light)
+            .scrollIndicators(.hidden)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBackMatrixFeedback)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
     }
 }
 
