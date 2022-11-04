@@ -28,32 +28,36 @@ struct HistoryView: View {
                 .frame(alignment: .topLeading)
             
             }
-    }
+        }
     }
     
     var body: some View {
         
-        ScrollView(){
-            
-            ZStack{
-                Color("yellow_tone").ignoresSafeArea()
-                VStack(spacing: 20){
+        ZStack{
+            Color("yellow_tone").ignoresSafeArea()
+            ScrollView(){
+                VStack(spacing: 0){
                         
                     Image("emptyHistory")
-                        
-//                    Spacer(minLength: 80)
+                        .offset(y: 50)
 
-                }.frame(height: 750)
-                    .offset(y: -50)
-            }.ignoresSafeArea()
-            .navigationBarTitleDisplayMode(.inline)
-
-            //ini headernya
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack)
-//            .shadow(color: .black, radius: 1)
-            
+                }
+            }.frame(maxHeight: .infinity)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        
+        //ini headernya
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        
+        //make navbar color to white
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(
+            Color.white,
+            for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .preferredColorScheme(.light)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
