@@ -25,6 +25,10 @@ struct NegotiationView: View {
     @State var button2:Bool = true
     @State var button3:Bool = true
     
+    func quitGame(){
+        activateLink.toggle()
+    }
+    
     var body: some View {
         if (self.i < myQuiz1.count){
             ZStack{
@@ -41,22 +45,14 @@ struct NegotiationView: View {
                                            label: { EmptyView() })
                             Image("negotiation_out").frame(alignment: .leading).padding(.top,-170).onTapGesture {
                                 showActionSheet = true
-                            }.alertX(isPresented: $showActionSheet, content: {
-                                AlertX(title: Text("Are you Sure?").fontWeight(.bold),
-                                       message: Text("If you quit this negotiation, all progress will be lost."),
-                                       primaryButton: .default(Text("Yes"), action:{self.unpairAndSetDefaultDeviceInformation()} ),
-                                      secondaryButton: .cancel(Text("No")),
-                                       theme: .custom(windowColor: .white,
-                                                      alertTextColor: .black,
-                                                      enableShadow: false,
-                                                      enableRoundedCorners: true,
-                                                      enableTransparency: false,
-                                                      cancelButtonColor: Color("green_tone"),
-                                                      cancelButtonTextColor: .white,
-                                                      defaultButtonColor: Color("yellow_tone"),
-                                                      defaultButtonTextColor: Color("green_tone"),
-                                                      roundedCornerRadius: 10))
-                            })
+                            }.alert("Are you Sure?", isPresented: $showActionSheet) {
+                                Button("No", role: .cancel){ }
+                                Button("Yes", role: .destructive, action: quitGame)
+                            } message: {
+                                Text("If you quit this negotiation, all progress will be lost.")
+                            }
+                            
+                            
                             NavigationLink(destination: backgroundview(), isActive:self.$isSeeBackground){
                                     EmptyView()
                                 }
