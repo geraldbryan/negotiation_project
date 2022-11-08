@@ -46,8 +46,8 @@ struct NegotiationView: View {
                             Image("negotiation_out").frame(alignment: .leading).padding(.top,-170).onTapGesture {
                                 showActionSheet = true
                             }.alert("Are you Sure?", isPresented: $showActionSheet) {
+                                Button("No", role: .cancel){ }
                                 Button("Yes", role: .destructive, action: quitGame)
-                                Button("No", role: .cancel) { }
                             } message: {
                                 Text("If you quit this negotiation, all progress will be lost.")
                             }

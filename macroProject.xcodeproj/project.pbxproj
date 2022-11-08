@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90776D25291A426300B04006 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D24291A426300B04006 /* testView.swift */; };
+		90776D28291A427D00B04006 /* testDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D27291A427D00B04006 /* testDataView.swift */; };
 		90BAE1B329015C3C002B9889 /* storyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B229015C3C002B9889 /* storyData.swift */; };
 		90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B429015C4C002B9889 /* backgroundview.swift */; };
 		90BAE1B729015C60002B9889 /* storyDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B629015C60002B9889 /* storyDetailData.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90776D24291A426300B04006 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		90776D27291A427D00B04006 /* testDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDataView.swift; sourceTree = "<group>"; };
 		90BAE1B229015C3C002B9889 /* storyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyData.swift; sourceTree = "<group>"; };
 		90BAE1B429015C4C002B9889 /* backgroundview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backgroundview.swift; sourceTree = "<group>"; };
 		90BAE1B629015C60002B9889 /* storyDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyDetailData.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				90BAE1B429015C4C002B9889 /* backgroundview.swift */,
+				90776D24291A426300B04006 /* testView.swift */,
+				90776D27291A427D00B04006 /* testDataView.swift */,
 				90BAE1C529016042002B9889 /* NegotiationView.swift */,
 				90BAE1C129015EE3002B9889 /* feedbackView.swift */,
 				B20B2D8728E6B7EB007E690D /* TheoryView.swift */,
@@ -254,6 +260,7 @@
 				90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */,
 				B222286C29068AD300E8F30D /* MatrixFeedback.swift in Sources */,
 				90BAE1BA29015C89002B9889 /* SwiftUISpeech.swift in Sources */,
+				90776D25291A426300B04006 /* testView.swift in Sources */,
 				B2C62CC028E6E8D30004B988 /* TutorialView.swift in Sources */,
 				B2C62CC228E6E8DD0004B988 /* HistoryView.swift in Sources */,
 				B2825024290011DA00450060 /* TheoryMatrixView.swift in Sources */,
@@ -267,6 +274,7 @@
 				B2A90BF828E18CA800650F1C /* ContentView.swift in Sources */,
 				B2825020290010D500450060 /* Matrix.swift in Sources */,
 				90BAE1B329015C3C002B9889 /* storyData.swift in Sources */,
+				90776D28291A427D00B04006 /* testDataView.swift in Sources */,
 				B2A90C0228E18CA900650F1C /* macroProject.xcdatamodeld in Sources */,
 				B2A90C0D28E2DDBE00650F1C /* HomeView.swift in Sources */,
 				B2A90BF628E18CA800650F1C /* macroProjectApp.swift in Sources */,
