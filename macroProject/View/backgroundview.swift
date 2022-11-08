@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct backgroundview: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @State var activateLink: Bool = false
+
     var body: some View {
         NavigationView{
             ZStack{
@@ -56,19 +61,38 @@ struct backgroundview: View {
                         
                         
                     }
-                    NavigationLink(destination: NegotiationView().environmentObject(SwiftUISpeech())){
+                    Button(action: addItem){
                         ZStack{
                             Rectangle().frame(width:209, height: 70).cornerRadius(10).foregroundColor(Color("yellowDark_tone"))
                             Text("Understand").foregroundColor(.black).font(.system(size: 24)).bold()
                         }.padding(.top,-10)
-                        
-                        
                     }
-                    
+                    VStack{
+                        NavigationLink(destination: NegotiationView().environmentObject(SwiftUISpeech()),isActive: $activateLink,
+                                       label: { EmptyView()})
+                    }
                 }
                 
             }
         }.navigationBarHidden(true).ignoresSafeArea()
+    }
+    
+    private func addItem() {
+        withAnimation {
+            self.activateLink.toggle()
+            let newItem = Item(context: viewContext)
+            newItem.story = storyDetail[0].title!
+            newItem.timestamp = Date()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
