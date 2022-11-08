@@ -128,30 +128,14 @@ struct HomeView: View {
                                                       roundedCornerRadius: 10))
                             })
                         }
-                        .cornerRadius(10)
-                        .alert("We are sorry", isPresented: $showAlert) {
-                            Button("Okay", role: .cancel) { }
-                        } message: {
-                            Text("We are very sorry this tutorial page hasn't been finished develop yet. Don't worry you still can practice the negotiation.")
-                        }
+                        .frame(maxWidth: 300, maxHeight: 200)
                         
-                    }
-                    .frame(maxWidth: 300, maxHeight: 200)
-                    
-                    HStack(alignment: .bottom){
-                        Text("Ready to negotiate?")
-                            .font(.system(size: 25))
-                            .fontWeight(.bold)
-                            .kerning(0.3)
-                            .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
-                            .foregroundColor(.black)
-                    }
-                    
-                    //ini tombolnya be buat start button
-                    //nihh be
-                    HStack(alignment: .bottom){
-                        NavigationLink(destination: backgroundview(), label: {
-                            Image( "Ready_button")
+                        HStack(alignment: .bottom){
+                            Text("Ready to negotiate?")
+                                .font(.system(size: 25))
+                                .fontWeight(.bold)
+                                .kerning(0.3)
+                                .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
                                 .foregroundColor(.black)
                         }
                         
