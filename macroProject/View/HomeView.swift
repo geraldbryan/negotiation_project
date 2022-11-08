@@ -20,9 +20,36 @@ struct RoundedCornersCustom: Shape {
     }
 }
 
+struct NetworkConnection: View{
+    @ObservedObject var monitor = NetworkMonitor()
+    @State private var showAlertSheet = false
+    
+    var body: some View{
+        ZStack{
+            Color("green_tone").ignoresSafeArea()
+            VStack{
+                Image("inet")
+                
+                Button(action: {self.showAlertSheet = true}) {
+                    Image("inet_button")
+                        .frame(width: 115, height: 150)
+                }.offset(x: -100,y: -350)
+            }
+            .alert(isPresented: $showAlertSheet, content: {
+                if monitor.isConnected{
+                    return Alert(title: Text("Success!"), message: Text("The network request was successful"), dismissButton: .default(Text("Ok")))
+                }
+                return Alert(title: Text("No Internet Connection!"), message: Text("Please Enable Wifi or Celular Data"), dismissButton: .default(Text("Cancel")))
+            })
+        }
+    }
+}
+
 struct HomeView: View {
     
     @State private var showAlert = false
+    @ObservedObject var monitor = NetworkMonitor()
+    @State private var showAlertSheet = false
     
     var body: some View {
         
@@ -31,58 +58,75 @@ struct HomeView: View {
             ZStack{
                 Color("yellow_tone").ignoresSafeArea()
                 
-                VStack(spacing: 20){
-                    
-                    ZStack{
-                        Image("hand")
-                            .resizable()
-                            .frame(width: 200, height: 150)
-                        Image("bulb")
-                            .offset(x: 150, y: -70)
-                        Image("coin")
-                            .offset(x: -120, y: 70)
-                        Image("panah")
-                            .offset(x:-150, y: -70)
-                        Image("graph")
-                            .offset(x: 120, y: 70)
-                    }.background(
-                        RoundedCornersCustom(corners: [.bottomRight], radius: 100)
-                            .fill(Color("kotak"))
-                            .frame(width: 430,height: 350)
-                            .shadow(radius: 15)
-                    )
-                    .frame(height: 330)
-                    
-                    HStack(alignment: .bottom){
-                        Text("Menu")
-                            .font(.system(size: 25))
-                            .fontWeight(.bold)
-                            .kerning(0.3)
-                            .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
-                            .foregroundColor(.black)
-                    }
-                    
-                    
-                    //bagian button menu nih
-                    HStack{
-                        NavigationLink(destination: HistoryView(), label: {
-                            Image("History_button")
-                                .foregroundColor(.black)
-                                .frame(width: 115, height: 150)
-                        })
-                        .cornerRadius(10)
+                if monitor.isConnected{
+                    VStack(spacing: 20){
+                        ZStack{
+                            Image("hand")
+                                .resizable()
+                                .frame(width: 200, height: 150)
+                            Image("bulb")
+                                .offset(x: 150, y: -70)
+                            Image("coin")
+                                .offset(x: -120, y: 70)
+                            Image("panah")
+                                .offset(x:-150, y: -70)
+                            Image("graph")
+                                .offset(x: 120, y: 70)
+                        }.background(
+                            RoundedCornersCustom(corners: [.bottomRight], radius: 100)
+                                .fill(Color("kotak"))
+                                .frame(width: 430,height: 350)
+                                .shadow(radius: 15)
+                        )
+                        .frame(height: 330)
                         
-                        NavigationLink(destination: TheoryView(), label: {
-                            Image("Theory_button")
+                        HStack(alignment: .bottom){
+                            Text("Menu")
+                                .font(.system(size: 25))
+                                .fontWeight(.bold)
+                                .kerning(0.3)
+                                .frame(maxWidth: 360, maxHeight: 50, alignment: .bottomLeading)
                                 .foregroundColor(.black)
-                                .frame(width: 115, height: 150)
-                        })
-                        .cornerRadius(10)
+                        }
                         
-                        Button(action: {self.showAlert.toggle()}) {
-                            Image("Tutorial_button")
-                                .foregroundColor(.black)
-                                .frame(width: 115, height: 150)
+                        
+                        //bagian button menu nih
+                        HStack{
+                            NavigationLink(destination: HistoryView(), label: {
+                                Image("History_button")
+                                    .foregroundColor(.black)
+                                    .frame(width: 115, height: 150)
+                            })
+                            .cornerRadius(10)
+                            
+                            NavigationLink(destination: TheoryView(), label: {
+                                Image("Theory_button")
+                                    .foregroundColor(.black)
+                                    .frame(width: 115, height: 150)
+                            })
+                            .cornerRadius(10)
+                            
+                            Button(action: {self.showAlert.toggle()}) {
+                                Image("Tutorial_button")
+                                    .foregroundColor(.black)
+                                    .frame(width: 115, height: 150)
+                            }
+                            .cornerRadius(10)
+                            .alertX(isPresented: $showAlert, content: {
+                                AlertX(title: Text("We are sorry").fontWeight(.bold),
+                                       message: Text("We are very sorry this tutorial page hasn't been finished develop yet. Don't worry you still can practice the negotiation."),
+                                       primaryButton: .cancel(Text("Okay")),
+                                       theme: .custom(windowColor: .white,
+                                                      alertTextColor: .black,
+                                                      enableShadow: false,
+                                                      enableRoundedCorners: true,
+                                                      enableTransparency: false,
+                                                      cancelButtonColor: Color("green_tone"),
+                                                      cancelButtonTextColor: .white,
+                                                      defaultButtonColor: Color("yellow_tone"),
+                                                      defaultButtonTextColor: Color("green_tone"),
+                                                      roundedCornerRadius: 10))
+                            })
                         }
                         .cornerRadius(10)
                         .alert("We are sorry", isPresented: $showAlert) {
@@ -109,14 +153,25 @@ struct HomeView: View {
                         NavigationLink(destination: backgroundview(), label: {
                             Image( "Ready_button")
                                 .foregroundColor(.black)
-                                .frame(width: 363, height: 120)
-                        })
-                        .background(Color("green_tone"))
-                        .cornerRadius(30)
-                    }
-                    Spacer(minLength: 80)
+                        }
+                        
+                        //ini tombolnya be buat start button
+                        //nihh be
+                        HStack(alignment: .bottom){
+                            NavigationLink(destination: backgroundview(), label: {
+                                Image( "Ready_button")
+                                    .foregroundColor(.black)
+                                    .frame(width: 363, height: 120)
+                            })
+                            .background(Color("green_tone"))
+                            .cornerRadius(30)
+                        }
+                        Spacer(minLength: 80)
 
-                    
+                        
+                    }
+                } else {
+                    NetworkConnection()
                 }
             }.ignoresSafeArea()
         }.navigationBarHidden(true).ignoresSafeArea()
