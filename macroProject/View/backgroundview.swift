@@ -11,6 +11,12 @@ struct backgroundview: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
+    
     @State var activateLink: Bool = false
 
     var body: some View {
@@ -68,7 +74,9 @@ struct backgroundview: View {
                         }.padding(.top,-10)
                     }
                     VStack{
-                        NavigationLink(destination: NegotiationView().environmentObject(SwiftUISpeech()),isActive: $activateLink,
+                        NavigationLink(destination: //NegotiationView()
+                                        NegotiationView(item: items[items.count-1])
+                            .environmentObject(SwiftUISpeech()),isActive: $activateLink,
                                        label: { EmptyView()})
                     }
                 }
@@ -87,8 +95,6 @@ struct backgroundview: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

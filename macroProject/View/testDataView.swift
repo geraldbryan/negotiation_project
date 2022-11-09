@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct testDataView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+       
+    @StateObject var play: Item
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct testDataView_Previews: PreviewProvider {
-    static var previews: some View {
-        testDataView()
+        VStack{
+            Text("Hello, World!")
+            List{
+                ForEach(Array(play.negotiations! as! Set<Negotiation>).sorted{
+                    $0.timestamp ?? Date() > $1.timestamp ?? Date()
+                }, id: \.self){ answer in
+                    VStack{
+                        Text(answer.question ?? "")
+                        Text(answer.answer ?? "")
+                    }
+                }
+            }
+        }
     }
 }

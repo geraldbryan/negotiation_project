@@ -16,6 +16,10 @@ struct NegotiationView: View {
     @State private var activateLink = false
     @State private var isSeeBackground = false
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
+    
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @StateObject var item: Item
 
     //number of question
     @State var i : Int = 0
@@ -169,7 +173,10 @@ struct NegotiationView: View {
                                         }){
                                             Image("redo")
                                         }
-                                        Button(action:{buttonAction(option: n)}){
+                                        Button(action:{
+                                            buttonAction(option: n)
+//                                            saveAnswer(option: n)
+                                        }){
                                             Image("submit_on")
                                         }
                                     }.padding(.top,80)
@@ -195,14 +202,7 @@ struct NegotiationView: View {
                 
             }.navigationBarHidden(true).ignoresSafeArea()
         }else{
-            feedbackView()
-        }
-    }
-    
-    func unpairAndSetDefaultDeviceInformation() {
-        // YOUR CODE IS HERE
-        DispatchQueue.main.async {
-            self.activateLink = true
+            feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal)
         }
     }
     
@@ -213,12 +213,31 @@ struct NegotiationView: View {
     }
     
     func buttonAction (option:Int){
+        
         self.answer.toggle()
         self.swiftUISpeech.isRecordButton.toggle()
         self.swiftUISpeech.text = myQuiz1[self.i].feedbackString[option]
         self.swiftUISpeech.medal = myQuiz1[self.i].medal[option]
+        
+        let newNegotiation = Negotiation(context: viewContext)
+        newNegotiation.question = myQuiz1[self.i].text
+        newNegotiation.answer = self.swiftUISpeech.outputText
+        newNegotiation.number = myQuiz1[self.i].questionKey ?? 0
+        newNegotiation.feedback = "abcdefg"
+
+        item.addToNegotiations(newNegotiation)
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        
         self.i = myQuiz1[self.i].load_ques[option]
+        
         self.swiftUISpeech.outputText = ""
+        
     }
     
     func record(choice: Int){
@@ -248,8 +267,8 @@ struct NegotiationView: View {
     }
 }
 
-struct NegotiationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NegotiationView().environmentObject(SwiftUISpeech())
-    }
-}
+//struct NegotiationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NegotiationView().environmentObject(SwiftUISpeech())
+//    }
+//}
