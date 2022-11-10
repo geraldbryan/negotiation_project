@@ -9,7 +9,7 @@ struct QuizModel  {
     // button navigation
     var load_ques : [Int]
     //specify what is the correct answer
-    var questionKey : Int?
+    var questionKey : Int64?
     var feedbackString : [String]
     var medal : [String]
 }
@@ -116,7 +116,7 @@ var myQuiz1 : [QuizModel] = [
 
     QuizModel(img: "background",
     text: "Alright sir, please come back here again in 3 days",
-    answer: ["Yes, thank you", "I will, see you on three days", "Yes, Pleasure to work with you"],
+    answer: ["Yes, thank you", "I will see you in three days", "Yes, Pleasure to work with you"],
     load_ques: [102,102,102],
     questionKey: 12,
     feedbackString: ["You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”", "You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”", "You used the “Compromising” style. You missed 1 objective that is “maximum of $10 extra charge”"],
