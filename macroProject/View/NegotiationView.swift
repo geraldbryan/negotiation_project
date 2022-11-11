@@ -17,6 +17,8 @@ struct NegotiationView: View {
     @State private var isSeeBackground = false
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     
+    @ObservedObject private var mic = MicMonitor(numberOfSamples: 30)
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @StateObject var item: Item
@@ -89,13 +91,16 @@ struct NegotiationView: View {
                                 Button(action:{record(choice: 0)}){
                                     
                                     if self.swiftUISpeech.isRecording{
-                                        ZStack (){
-                                            Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
-                                            HStack{
-                                                Text(myQuiz1[self.i].answer[0]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
-                                                Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                        VStack{
+                                            ZStack{
+                                                Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
+                                                HStack{
+                                                    Text(myQuiz1[self.i].answer[0]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
+                                                    Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                                }
                                             }
                                         }
+                                        
                                     } else {
                                         ZStack (){
                                             Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(.white).shadow(color: .gray, radius: 5, x: 0, y: 5)
@@ -112,11 +117,13 @@ struct NegotiationView: View {
                             if button2{
                                 Button(action:{record(choice: 1)}){
                                     if self.swiftUISpeech.isRecording{
-                                        ZStack (){
-                                            Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
-                                            HStack{
-                                                Text(myQuiz1[self.i].answer[1]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
-                                                Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                        VStack{
+                                            ZStack{
+                                                Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
+                                                HStack{
+                                                    Text(myQuiz1[self.i].answer[1]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
+                                                    Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                                }
                                             }
                                         }
                                     } else {
@@ -135,11 +142,13 @@ struct NegotiationView: View {
                             if button3{
                                 Button(action:{record(choice: 2)}){
                                     if self.swiftUISpeech.isRecording{
-                                        ZStack (){
-                                            Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
-                                            HStack{
-                                                Text(myQuiz1[self.i].answer[2]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
-                                                Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                        VStack{
+                                            ZStack{
+                                                Rectangle().frame(width:351,height: 59).cornerRadius(10).foregroundColor(Color("green_tone")).shadow(color: .gray, radius: 5, x: 0, y: 5)
+                                                HStack{
+                                                    Text(myQuiz1[self.i].answer[2]).multilineTextAlignment(.leading).padding(.leading,21).font(.system(size: 14)).foregroundColor(.white).frame(width:300,alignment: .leading)
+                                                    Image(systemName:"mic.slash.fill").foregroundColor(.white)
+                                                }
                                             }
                                         }
                                     } else {
@@ -175,15 +184,14 @@ struct NegotiationView: View {
                                         }
                                         Button(action:{
                                             buttonAction(option: n)
-//                                            saveAnswer(option: n)
                                         }){
                                             Image("submit_on")
                                         }
                                     }.padding(.top,80)
                                 }
-                                
                             } else {
                                 HStack(spacing:20){
+                                    
                                     Button(action:{ redo()
                                     }){
                                         Image("redo")
@@ -216,6 +224,7 @@ struct NegotiationView: View {
         
         self.answer.toggle()
         self.swiftUISpeech.isRecordButton.toggle()
+        
         self.swiftUISpeech.text = myQuiz1[self.i].feedbackString[option]
         self.swiftUISpeech.medal = myQuiz1[self.i].medal[option]
         
@@ -240,6 +249,21 @@ struct NegotiationView: View {
         
     }
     
+    private func normolizedSoundLevel(level: Float) -> CGFloat {
+      let level = max(0.2, CGFloat(level) + 50) / 2
+      return CGFloat(level * (100 / 25))
+    }
+
+    private func visualizerView() -> some View {
+      VStack {
+        HStack(spacing: 4) {
+          ForEach(mic.soundSamples, id: \.self) { level in
+            VisualBarView(value: self.normolizedSoundLevel(level: level))
+          }
+        }
+      }
+    }
+    
     func record(choice: Int){
         self.n = choice
         if choice == 0{
@@ -260,7 +284,11 @@ struct NegotiationView: View {
                 self.answer.toggle()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                 self.swiftUISpeech.stopRecording()
-            } } else { self.swiftUISpeech.startRecording() }
+                    mic.stopMonitoring()
+            } } else {
+                self.swiftUISpeech.startRecording()
+                mic.startMonitoring()
+            }
             self.swiftUISpeech.isRecording.toggle()
         }
         

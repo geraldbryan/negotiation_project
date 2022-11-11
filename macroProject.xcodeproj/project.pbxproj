@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		90776D25291A426300B04006 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D24291A426300B04006 /* testView.swift */; };
 		90776D28291A427D00B04006 /* testDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D27291A427D00B04006 /* testDataView.swift */; };
+		90776D2B291CE62500B04006 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D29291CE62500B04006 /* MicManager.swift */; };
+		90776D2C291CE62500B04006 /* VisualBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D2A291CE62500B04006 /* VisualBarView.swift */; };
+		90776D2F291CE66100B04006 /* testSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D2E291CE66100B04006 /* testSoundView.swift */; };
 		90BAE1B329015C3C002B9889 /* storyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B229015C3C002B9889 /* storyData.swift */; };
 		90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B429015C4C002B9889 /* backgroundview.swift */; };
 		90BAE1B729015C60002B9889 /* storyDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1B629015C60002B9889 /* storyDetailData.swift */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		90776D24291A426300B04006 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		90776D27291A427D00B04006 /* testDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDataView.swift; sourceTree = "<group>"; };
+		90776D29291CE62500B04006 /* MicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
+		90776D2A291CE62500B04006 /* VisualBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualBarView.swift; sourceTree = "<group>"; };
+		90776D2E291CE66100B04006 /* testSoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testSoundView.swift; sourceTree = "<group>"; };
 		90BAE1B229015C3C002B9889 /* storyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyData.swift; sourceTree = "<group>"; };
 		90BAE1B429015C4C002B9889 /* backgroundview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backgroundview.swift; sourceTree = "<group>"; };
 		90BAE1B629015C60002B9889 /* storyDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyDetailData.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			children = (
 				90BAE1B429015C4C002B9889 /* backgroundview.swift */,
 				90776D24291A426300B04006 /* testView.swift */,
+				90776D2E291CE66100B04006 /* testSoundView.swift */,
 				90776D27291A427D00B04006 /* testDataView.swift */,
 				90BAE1C529016042002B9889 /* NegotiationView.swift */,
 				90BAE1C129015EE3002B9889 /* feedbackView.swift */,
@@ -98,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				90BAE1B929015C89002B9889 /* SwiftUISpeech.swift */,
+				90776D29291CE62500B04006 /* MicManager.swift */,
+				90776D2A291CE62500B04006 /* VisualBarView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,8 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90776D2F291CE66100B04006 /* testSoundView.swift in Sources */,
 				B2CF226629078A1700C08247 /* ConfidenceFeedback.swift in Sources */,
 				90BAE1B529015C4C002B9889 /* backgroundview.swift in Sources */,
+				90776D2C291CE62500B04006 /* VisualBarView.swift in Sources */,
 				B222286C29068AD300E8F30D /* MatrixFeedback.swift in Sources */,
 				90BAE1BA29015C89002B9889 /* SwiftUISpeech.swift in Sources */,
 				90776D25291A426300B04006 /* testView.swift in Sources */,
@@ -282,6 +293,7 @@
 				B26DC7D8291933E100FF5688 /* NetworkMonitor.swift in Sources */,
 				B20B2D8828E6B7EB007E690D /* TheoryView.swift in Sources */,
 				90BAE1BC29015CF7002B9889 /* SpeechButton.swift in Sources */,
+				90776D2B291CE62500B04006 /* MicManager.swift in Sources */,
 				90BAE1C629016042002B9889 /* NegotiationView.swift in Sources */,
 				B2A90BF828E18CA800650F1C /* ContentView.swift in Sources */,
 				B2825020290010D500450060 /* Matrix.swift in Sources */,
