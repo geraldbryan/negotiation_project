@@ -47,7 +47,6 @@ struct TheoryMatrixView: View{
                     Image(matrix.image)
                         .frame(width: 360, height: 350, alignment: .center)
                         .offset(x: -15)
-                    
                     VStack{
                         //definition
                         DisclosureGroup(isExpanded: $isExpanded1){
