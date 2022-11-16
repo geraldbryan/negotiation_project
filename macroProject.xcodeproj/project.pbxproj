@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9073802D292289E200765E05 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802B292289E100765E05 /* correct.wav */; };
+		9073802E292289E200765E05 /* false.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802C292289E200765E05 /* false.wav */; };
 		90776D25291A426300B04006 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D24291A426300B04006 /* testView.swift */; };
 		90776D28291A427D00B04006 /* testDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D27291A427D00B04006 /* testDataView.swift */; };
 		90776D2B291CE62500B04006 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D29291CE62500B04006 /* MicManager.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9073802B292289E100765E05 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
+		9073802C292289E200765E05 /* false.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = false.wav; sourceTree = "<group>"; };
 		90776D24291A426300B04006 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		90776D27291A427D00B04006 /* testDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDataView.swift; sourceTree = "<group>"; };
 		90776D29291CE62500B04006 /* MicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				B28DE56A292230B200FAD855 /* LoopingPlayer.swift */,
 				B28DE560291E276C00FAD855 /* GifImage.swift */,
 				B2A90BF928E18CA900650F1C /* Assets.xcassets */,
+				9073802B292289E100765E05 /* correct.wav */,
+				9073802C292289E200765E05 /* false.wav */,
 				B2A90BFE28E18CA900650F1C /* Persistence.swift */,
 				B2A90C0028E18CA900650F1C /* macroProject.xcdatamodeld */,
 				B2A90BFB28E18CA900650F1C /* Preview Content */,
@@ -279,9 +285,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9073802E292289E200765E05 /* false.wav in Resources */,
 				B2A90BFD28E18CA900650F1C /* Preview Assets.xcassets in Resources */,
 				B2B9FAC329239A8D005E87D2 /* no_medal.gif in Resources */,
 				B2A90BFA28E18CA900650F1C /* Assets.xcassets in Resources */,
+				9073802D292289E200765E05 /* correct.wav in Resources */,
 				B2B9FAC129239A8D005E87D2 /* full_medal.gif in Resources */,
 				B2B9FAC229239A8D005E87D2 /* half_medal.gif in Resources */,
 			);

@@ -8,6 +8,7 @@
 import SwiftUI
 import Speech
 import AlertX
+import AVFoundation
 
 struct NegotiationView: View {
     @State var isPressedOut:Bool = false
@@ -18,6 +19,8 @@ struct NegotiationView: View {
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     
     @ObservedObject private var mic = MicMonitor(numberOfSamples: 30)
+
+    @State var audioPlayer: AVAudioPlayer!
     
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -67,23 +70,51 @@ struct NegotiationView: View {
                             }
                         }
                         ZStack{
-                            Image("negotiator")
+                            Image(myQuiz1[self.i].img!) // ini buat gambar orangnya biar ga melayang
                             ZStack{
                                 Image("chatbox")
-                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black)
+                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
                             }.padding(.top,300)
                         }
                     }.padding(.bottom,50)
                     
                     VStack(spacing: 20){
                         if (swiftUISpeech.outputText .compare(myQuiz1[self.i].answer[n].components(separatedBy: .punctuationCharacters).joined(), options: .caseInsensitive) == .orderedSame){
-                            Text("\(swiftUISpeech.outputText)")
-                                .font(.title)
-                                .bold().foregroundColor(Color("green_tone")).frame(width: 350).minimumScaleFactor(0.5)
+                            if self.swiftUISpeech.isRecording {
+                                Text("Speak and click the button again to stop").foregroundColor(.gray).font(.system(size: 16))
+                                Text("\(swiftUISpeech.outputText)")
+                                    .font(.title)
+                                    .bold().foregroundColor(Color("green_tone")).frame(width: 350).frame(maxHeight: 80).minimumScaleFactor(0.5)
+                            } else {
+                                Text("Good job!").foregroundColor(.gray).font(.system(size: 16)).bold()
+                                Text("\(swiftUISpeech.outputText)")
+                                    .font(.title)
+                                    .bold().foregroundColor(Color("green_tone")).frame(width: 350).frame(maxHeight: 80).minimumScaleFactor(0.5)
+                            }
+                            
                         } else {
-                            Text("\(swiftUISpeech.outputText)")
-                                .font(.title)
-                                .bold().foregroundColor(Color("red_tone")).frame(width: 350).minimumScaleFactor(0.5)
+                            if swiftUISpeech.outputText == ""{
+                                if self.swiftUISpeech.isRecording {
+                                    Text("Speak and click the button again to stop").foregroundColor(.gray).font(.system(size: 16))
+                                    Text("\(swiftUISpeech.outputText)")
+                                        .font(.title)
+                                        .bold().foregroundColor(.black).frame(width: 350).frame(maxHeight: 60).minimumScaleFactor(0.5)
+                                } else {
+                                    Text("Select one to answer").foregroundColor(.gray).font(.system(size: 16))
+                                }
+                            } else {
+                                if self.swiftUISpeech.isRecording {
+                                    Text("Speak and click the button again to stop").foregroundColor(.gray).font(.system(size: 16))
+                                    Text("\(swiftUISpeech.outputText)")
+                                        .font(.title)
+                                        .bold().foregroundColor(.black).frame(width: 350).frame(maxHeight: 60).minimumScaleFactor(0.5)
+                                } else {
+                                    Text("Some words are wrong/missing, try again").foregroundColor(.gray).font(.system(size: 16)).bold()
+                                    Text("\(swiftUISpeech.outputText)")
+                                        .font(.title)
+                                        .bold().foregroundColor(Color("red_tone")).frame(width: 350).frame(maxHeight: 60).minimumScaleFactor(0.5)
+                                }
+                            }
                         }
                         
                         if answer == false{
@@ -187,19 +218,25 @@ struct NegotiationView: View {
                                         }){
                                             Image("submit_on")
                                         }
-                                    }.padding(.top,80)
+                                    }
+                                }.padding(.top,10).onAppear {
+                                    self.playCorrect()
                                 }
                             } else {
-                                HStack(spacing:20){
-                                    
-                                    Button(action:{ redo()
-                                    }){
-                                        Image("redo")
+                                VStack{
+                                    HStack(spacing:20){
+                                        
+                                        Button(action:{ redo()
+                                        }){
+                                            Image("redo")
+                                        }
+                                        Button(action:{}){
+                                            Image("submit_off")
+                                        }
                                     }
-                                    Button(action:{}){
-                                        Image("submit_off")
-                                    }
-                                }.padding(.top,80)
+                                }.padding(.top,10).onAppear {
+                                    self.playFalse()
+                                }
                             }
                         }
                     }.offset(y:20)
@@ -212,6 +249,18 @@ struct NegotiationView: View {
         }else{
             feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal)
         }
+    }
+    
+    func playCorrect(){
+        let sound = Bundle.main.path(forResource: "correct", ofType: "wav")
+        self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        self.audioPlayer.play()
+    }
+    
+    func playFalse(){
+        let sound = Bundle.main.path(forResource: "false", ofType: "wav")
+        self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        self.audioPlayer.play()
     }
     
     func redo(){
@@ -282,7 +331,7 @@ struct NegotiationView: View {
         }else{
             if self.swiftUISpeech.isRecording{
                 self.answer.toggle()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.swiftUISpeech.stopRecording()
                     mic.stopMonitoring()
             } } else {
