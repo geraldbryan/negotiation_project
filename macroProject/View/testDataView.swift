@@ -24,6 +24,7 @@ struct testDataView: View {
                     VStack{
                         Text(answer.question ?? "")
                         Text(answer.answer ?? "")
+                        Text(answer.feedback ?? "")
                     }
                 }
             }

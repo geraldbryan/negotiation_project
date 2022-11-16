@@ -18,24 +18,24 @@ struct testView: View {
     
     var body: some View {
         
-        ZStack{
-            Color.blue
-            VStack{
-                GifImage(name: "medalfullbg").frame(height: 400).offset()
-            }
-        }
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//        List {
-//            ForEach(items) { item in
-//                NavigationLink(destination: testDataView(play: item)){
-//                    VStack{
-//                        Text(item.objectives ?? "abca")
-//                        Text(item.story ?? "")
-//                }
-//                }
-//
+//        ZStack{
+//            Color.blue
+//            VStack{
+//                GifImage(name: "medalfullbg").frame(height: 400).offset()
 //            }
 //        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(items) { item in
+                NavigationLink(destination: testDataView(play: item)){
+                    VStack{
+                        Text(item.objectives ?? "abca")
+                        Text(item.story ?? "")
+                }
+                }
+
+            }
+        }
     }
 }
 
