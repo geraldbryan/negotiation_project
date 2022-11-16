@@ -24,6 +24,7 @@ struct Knowledge: Identifiable{
     let info4: String
     let infoTitle5: String
     let info5: String
+    let color: String
 //    let url: URL
 }
 
@@ -46,7 +47,8 @@ struct KnowledgeList{
             infoTitle4: "4. DO listen to others.",
             info4: "The most effective negotiators follow the 80/20 rule: 80% listen, 20% talk.",
             infoTitle5: "5. DO consider all of your options.",
-            info5: "It's important to keep the mind open to a variety of options. If you go into business negotiations with a closed mind, you may miss an unexpected opportunity."),
+            info5: "It's important to keep the mind open to a variety of options. If you go into business negotiations with a closed mind, you may miss an unexpected opportunity.",
+            color: "green_tone"),
         Knowledge(
             icon: "xmark",
             textIcon: "Dont's",
@@ -62,6 +64,7 @@ struct KnowledgeList{
             infoTitle4: "4. DON'T gloat after a win",
             info4: "The person you gloated in front of yesterday may be the person you're working with or reporting to tommorow.",
             infoTitle5: "5. DON'T understimate anyone",
-            info5: "Don't understimate the power of a determined competitor-including you. Financial Worth and business size may be powerful, but so are preparation, a solid plan, and a great attitude."),
+            info5: "Don't understimate the power of a determined competitor-including you. Financial Worth and business size may be powerful, but so are preparation, a solid plan, and a great attitude.",
+            color: "red_tone"),
     ]
 }
