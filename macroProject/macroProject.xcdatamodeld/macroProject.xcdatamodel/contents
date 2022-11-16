@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="bestStyle" optional="YES" attributeType="String"/>
+        <attribute name="feedback" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="objectives" optional="YES" attributeType="String"/>
         <attribute name="story" optional="YES" attributeType="String"/>
         <attribute name="style" optional="YES" attributeType="String"/>
+        <attribute name="styleDescription" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="negotiations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Negotiation" inverseName="item" inverseEntity="Negotiation"/>
     </entity>

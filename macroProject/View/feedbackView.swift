@@ -15,6 +15,10 @@ struct feedbackView: View {
     
     @State var medal: String
     
+    @StateObject var item: Item
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
         var btnBack : some View { Button(action: {
@@ -53,7 +57,6 @@ struct feedbackView: View {
                     .offset(y: 200)
                 
                 VStack{
-    //                Image("\(medal)")
                     ZStack{
                         GifImage(name: "\(medal)")
                             .scaledToFill()
@@ -103,7 +106,23 @@ struct feedbackView: View {
             for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .preferredColorScheme(.light)
+        .onAppear{self.updateStyle(item: item)}
     }
+    
+    func updateStyle(item: Item){
+        item.objectives = self.medal
+        item.feedback = self.feedback
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+
 }
 
 //struct feedbackView_Previews: PreviewProvider {

@@ -247,7 +247,7 @@ struct NegotiationView: View {
                 
             }.navigationBarHidden(true).ignoresSafeArea()
         }else{
-            feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal)
+            feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal, item: item)
         }
     }
     
