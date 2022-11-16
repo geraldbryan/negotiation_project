@@ -281,7 +281,7 @@ struct NegotiationView: View {
         newNegotiation.question = myQuiz1[self.i].text
         newNegotiation.answer = self.swiftUISpeech.outputText
         newNegotiation.number = myQuiz1[self.i].questionKey ?? 0
-        newNegotiation.feedback = "abcdefg"
+        newNegotiation.feedback = myQuiz1[self.i].feedbackEachAnswer[option]
 
         item.addToNegotiations(newNegotiation)
 
