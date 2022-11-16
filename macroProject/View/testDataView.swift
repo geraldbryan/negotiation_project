@@ -23,7 +23,9 @@ struct testDataView: View {
                 }, id: \.self){ answer in
                     VStack{
                         Text(answer.question ?? "")
+                        Divider()
                         Text(answer.answer ?? "")
+                        Divider()
                         Text(answer.feedback ?? "")
                     }
                 }

@@ -91,6 +91,8 @@ struct backgroundview: View {
             let newItem = Item(context: viewContext)
             newItem.story = storyDetail[0].title!
             newItem.timestamp = Date()
+            newItem.styleDescription = storyDetail[0].description
+            newItem.bestStyle = storyDetail[0].style
             
             do {
                 try viewContext.save()

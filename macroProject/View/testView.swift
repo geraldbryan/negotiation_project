@@ -29,8 +29,24 @@ struct testView: View {
             ForEach(items) { item in
                 NavigationLink(destination: testDataView(play: item)){
                     VStack{
-                        Text(item.objectives ?? "abca")
+                        HStack{
+                            Text(item.objectives ?? "abca")
+                            Text("-")
+                            Text(item.feedback ?? "no feedback")
+                        }
+                        
+                        Divider()
                         Text(item.story ?? "")
+                        Divider()
+                        Text(item.timestamp!, formatter: itemFormatter)
+                        Divider()
+                        Text(item.styleDescription ?? "")
+                        Divider()
+                        HStack{
+                            Text("BEST STYLE: \(item.bestStyle ?? "not yet")")
+                            Text("USED STYLE: \(item.style ?? "not yet")")
+                        }.padding(10)
+                        Divider()
                 }
                 }
 
@@ -41,8 +57,7 @@ struct testView: View {
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+    formatter.dateFormat = "dd/MM/yyyy '-' HH:mm 'WIB'"
     return formatter
 }()
 
