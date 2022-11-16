@@ -89,7 +89,6 @@ struct HomeView: View {
                                 .foregroundColor(.black)
                         }
                         
-                        
                         //bagian button menu nih
                         HStack{
                             NavigationLink(destination: HistoryView(), label: {
