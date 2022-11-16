@@ -70,10 +70,10 @@ struct NegotiationView: View {
                             }
                         }
                         ZStack{
-                            Image("negotiator")
+                            Image(myQuiz1[self.i].img!) // ini buat gambar orangnya biar ga melayang
                             ZStack{
                                 Image("chatbox")
-                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black)
+                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
                             }.padding(.top,300)
                         }
                     }.padding(.bottom,50)
@@ -86,7 +86,7 @@ struct NegotiationView: View {
                                     .font(.title)
                                     .bold().foregroundColor(Color("green_tone")).frame(width: 350).frame(maxHeight: 80).minimumScaleFactor(0.5)
                             } else {
-                                Text("Good job!").foregroundColor(Color("green_tone")).font(.system(size: 16)).bold()
+                                Text("Good job!").foregroundColor(.gray).font(.system(size: 16)).bold()
                                 Text("\(swiftUISpeech.outputText)")
                                     .font(.title)
                                     .bold().foregroundColor(Color("green_tone")).frame(width: 350).frame(maxHeight: 80).minimumScaleFactor(0.5)
@@ -109,7 +109,7 @@ struct NegotiationView: View {
                                         .font(.title)
                                         .bold().foregroundColor(.black).frame(width: 350).frame(maxHeight: 60).minimumScaleFactor(0.5)
                                 } else {
-                                    Text("Some words are wrong/missing, try again").foregroundColor(.red).font(.system(size: 16)).bold()
+                                    Text("Some words are wrong/missing, try again").foregroundColor(.gray).font(.system(size: 16)).bold()
                                     Text("\(swiftUISpeech.outputText)")
                                         .font(.title)
                                         .bold().foregroundColor(Color("red_tone")).frame(width: 350).frame(maxHeight: 60).minimumScaleFactor(0.5)
