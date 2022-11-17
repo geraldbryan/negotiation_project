@@ -23,13 +23,21 @@ struct testDataView: View {
                 }, id: \.self){ answer in
                     VStack{
                         Text(answer.question ?? "")
-                        Divider()
+                        Text("-")
                         Text(answer.answer ?? "")
-                        Divider()
+                        Text("-")
                         Text(answer.feedback ?? "")
+                        Text("-")
+                        Text(answer.timestamp ?? Date(), formatter: itemFormatter)
                     }
                 }
             }
         }
     }
+    
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy '-' HH:mm:ss 'WIB'"
+        return formatter
+    }()
 }
