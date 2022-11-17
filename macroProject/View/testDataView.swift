@@ -19,7 +19,7 @@ struct testDataView: View {
             Text("Hello, World!")
             List{
                 ForEach(Array(play.negotiations! as! Set<Negotiation>).sorted{
-                    $0.timestamp ?? Date() > $1.timestamp ?? Date()
+                    $0.timestamp ?? Date() < $1.timestamp ?? Date()
                 }, id: \.self){ answer in
                     VStack{
                         Text(answer.question ?? "")
