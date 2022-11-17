@@ -282,6 +282,7 @@ struct NegotiationView: View {
         newNegotiation.answer = self.swiftUISpeech.outputText
         newNegotiation.number = myQuiz1[self.i].questionKey ?? 0
         newNegotiation.feedback = myQuiz1[self.i].feedbackEachAnswer[option]
+        newNegotiation.timestamp = Date()
 
         item.addToNegotiations(newNegotiation)
 
