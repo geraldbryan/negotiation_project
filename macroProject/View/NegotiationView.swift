@@ -73,7 +73,7 @@ struct NegotiationView: View {
                                 Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
                             }.padding(.top,300)
                         }
-                    }frame(height: 500).scaledToFill()
+                    }.frame(height: 500).scaledToFill()
                     
                     VStack(spacing: 20){
                         if (swiftUISpeech.outputText .compare(myQuiz1[self.i].answer[n].components(separatedBy: .punctuationCharacters).joined(), options: .caseInsensitive) == .orderedSame){
