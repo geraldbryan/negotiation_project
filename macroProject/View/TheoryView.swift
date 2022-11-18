@@ -10,14 +10,6 @@ import SwiftUI
 struct TheoryView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-//    @State private var showModal1 = false
-//    @State private var showModal2 = false
-//    @State private var showModal3 = false
-//    @State private var showModal4 = false
-//    @State private var showModal5 = false
-    
-//    @State var selected = 1
-    
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }){
@@ -132,26 +124,3 @@ struct TheoryView_Previews: PreviewProvider{
         HomeView()
     }
 }
-
-
-
-//segment control
-//        VStack{
-//            Picker(selection: $selected, label: Text("Picker"), content: {
-//                Text("Matrix")
-//                    .tag(1).font(.system(size: 14))
-//                Text("Knowledge")
-//                    .tag(2).font(.system(size: 14))
-//            })
-//            .pickerStyle(SegmentedPickerStyle())
-//            .frame(width: 360, height: 30, alignment: .top)
-    
-//            if selected == 1 {
-//                MatrixView
-//            }else{
-//                KnowledgeView
-////            }
-//            MatrixView
-//            KnowledgeView
-//        }
-//        .offset(y: 10)
