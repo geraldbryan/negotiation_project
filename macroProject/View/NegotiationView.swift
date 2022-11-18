@@ -45,7 +45,8 @@ struct NegotiationView: View {
                 
                 VStack{
                     ZStack{
-                        Image("background")
+                        Image("background").resizable()
+
                         HStack {
                             NavigationLink(destination: HomeView(), isActive: $activateLink,
                                            label: { EmptyView() })
@@ -67,7 +68,7 @@ struct NegotiationView: View {
                             }
                         }
                         ZStack{
-                            Image(myQuiz1[self.i].img!).frame(height: 306, alignment: .bottom).offset(y: 100) // ini buat gambar orangnya biar ga melayang
+                            Image(myQuiz1[self.i].img!).frame(height: 300, alignment: .bottom).offset(y: 100) // ini buat gambar orangnya biar ga melayang
                             ZStack{
                                 Image("chatbox")
                                 Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
