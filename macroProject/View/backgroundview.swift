@@ -93,6 +93,7 @@ struct backgroundview: View {
             newItem.timestamp = Date()
             newItem.styleDescription = storyDetail[0].description
             newItem.bestStyle = storyDetail[0].style
+            newItem.image = storyDetail[0].img
             
             do {
                 try viewContext.save()

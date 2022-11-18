@@ -33,6 +33,8 @@ struct testView: View {
                             Text(item.objectives ?? "abca")
                             Text("-")
                             Text(item.feedback ?? "no feedback")
+                            Text("-")
+                            Text(item.image ?? "no feedback")
                         }
                         
                         Divider()
