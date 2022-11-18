@@ -27,7 +27,7 @@ struct NegotiationView: View {
     @StateObject var item: Item
 
     //number of question
-    @State var i : Int = 0
+    @State var i : Int
     @State var n : Int = 0
     @State var answer:Bool = false
     @State var button1:Bool = true
@@ -60,7 +60,7 @@ struct NegotiationView: View {
                             }
                             
                             
-                            NavigationLink(destination: backgroundview(), isActive:self.$isSeeBackground){
+                            NavigationLink(destination: replayBackgroundview(question: self.i, item: item), isActive:self.$isSeeBackground){
                                     EmptyView()
                                 }
                             Image("negotiation_background").frame(alignment: .trailing).padding(.top,-170).padding(.leading,250).onTapGesture {
@@ -265,6 +265,7 @@ struct NegotiationView: View {
         self.swiftUISpeech.isRecordButton.toggle()
         self.answer.toggle()
         self.swiftUISpeech.outputText = ""
+        print(self.i)
     }
     
     func buttonAction (option:Int){
@@ -294,7 +295,6 @@ struct NegotiationView: View {
         self.i = myQuiz1[self.i].load_ques[option]
         
         self.swiftUISpeech.outputText = ""
-        
     }
     
     private func normolizedSoundLevel(level: Float) -> CGFloat {

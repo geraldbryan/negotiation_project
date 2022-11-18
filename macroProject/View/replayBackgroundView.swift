@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct backgroundview: View {
+struct replayBackgroundview: View {
+    
+    @State var question: Int
     
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    
-    private var items: FetchedResults<Item>
-    
-    @State var activateLink: Bool = false
+
+    @StateObject var item: Item
 
     var body: some View {
         NavigationView{
@@ -67,46 +63,21 @@ struct backgroundview: View {
                         
                         
                     }
-                    Button(action: addItem){
+                    NavigationLink(destination: NegotiationView(item: item, i: self.question).environmentObject(SwiftUISpeech())){
                         ZStack{
                             Rectangle().frame(width:209, height: 70).cornerRadius(10).foregroundColor(Color("yellowDark_tone"))
-                            Text("Understand").foregroundColor(.black).font(.system(size: 24)).bold()
+                            Text("Continue").foregroundColor(.black).font(.system(size: 24)).bold()
                         }.padding(.top,-10)
-                    }
-                    VStack{
-                        NavigationLink(destination: //NegotiationView()
-                                        NegotiationView(item: items[items.count-1], i: 0)
-                            .environmentObject(SwiftUISpeech()),isActive: $activateLink,
-                                       label: { EmptyView()})
                     }
                 }
                 
             }
         }.navigationBarHidden(true).ignoresSafeArea()
     }
-    
-    private func addItem() {
-        withAnimation {
-            self.activateLink.toggle()
-            let newItem = Item(context: viewContext)
-            newItem.story = storyDetail[0].title!
-            newItem.timestamp = Date()
-            newItem.styleDescription = storyDetail[0].description
-            newItem.bestStyle = storyDetail[0].style
-            newItem.image = storyDetail[0].img
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 }
 
-struct backgroundview_Previews: PreviewProvider {
-    static var previews: some View {
-        backgroundview()
-    }
-}
+//struct replayBackgroundview_Previews: PreviewProvider {
+//    static var previews: some View {
+//        replayBackgroundview()
+//    }
+//}
