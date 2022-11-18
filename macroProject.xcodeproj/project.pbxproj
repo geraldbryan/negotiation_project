@@ -11,7 +11,6 @@
 		9073802D292289E200765E05 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802B292289E100765E05 /* correct.wav */; };
 		9073802E292289E200765E05 /* false.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802C292289E200765E05 /* false.wav */; };
 		9073804F2926151500765E05 /* historyFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9073804E2926151500765E05 /* historyFeedbackView.swift */; };
-		907380582927869B00765E05 /* replayBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907380572927869B00765E05 /* replayBackgroundView.swift */; };
 		90776D25291A426300B04006 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D24291A426300B04006 /* testView.swift */; };
 		90776D28291A427D00B04006 /* testDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D27291A427D00B04006 /* testDataView.swift */; };
 		90776D2B291CE62500B04006 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90776D29291CE62500B04006 /* MicManager.swift */; };
@@ -54,7 +53,6 @@
 		9073802B292289E100765E05 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		9073802C292289E200765E05 /* false.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = false.wav; sourceTree = "<group>"; };
 		9073804E2926151500765E05 /* historyFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyFeedbackView.swift; sourceTree = "<group>"; };
-		907380572927869B00765E05 /* replayBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replayBackgroundView.swift; sourceTree = "<group>"; };
 		90776D24291A426300B04006 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		90776D27291A427D00B04006 /* testDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDataView.swift; sourceTree = "<group>"; };
 		90776D29291CE62500B04006 /* MicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				90776D2E291CE66100B04006 /* testSoundView.swift */,
 				90776D27291A427D00B04006 /* testDataView.swift */,
 				90BAE1C529016042002B9889 /* NegotiationView.swift */,
-				907380572927869B00765E05 /* replayBackgroundView.swift */,
 				90BAE1C129015EE3002B9889 /* feedbackView.swift */,
 				9073804E2926151500765E05 /* historyFeedbackView.swift */,
 				B20B2D8728E6B7EB007E690D /* TheoryView.swift */,
@@ -326,7 +323,6 @@
 				B2A90BFF28E18CA900650F1C /* Persistence.swift in Sources */,
 				B282501A28FE90DE00450060 /* TheoryKnowledgeView.swift in Sources */,
 				B282501C28FE910600450060 /* Knowledge.swift in Sources */,
-				907380582927869B00765E05 /* replayBackgroundView.swift in Sources */,
 				9073804F2926151500765E05 /* historyFeedbackView.swift in Sources */,
 				90BAE1B729015C60002B9889 /* storyDetailData.swift in Sources */,
 				B26DC7D8291933E100FF5688 /* NetworkMonitor.swift in Sources */,

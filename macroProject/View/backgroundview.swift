@@ -74,8 +74,8 @@ struct backgroundview: View {
                         }.padding(.top,-10)
                     }
                     VStack{
-                        NavigationLink(destination: //NegotiationView()
-                                        NegotiationView(item: items[items.count-1], i: 0)
+                        NavigationLink(destination: 
+                                        NegotiationView(item: items[items.count-1])
                             .environmentObject(SwiftUISpeech()),isActive: $activateLink,
                                        label: { EmptyView()})
                     }
