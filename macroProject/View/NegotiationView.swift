@@ -27,7 +27,7 @@ struct NegotiationView: View {
     @StateObject var item: Item
 
     //number of question
-    @State var i : Int
+    @State var i : Int = 0 
     @State var n : Int = 0
     @State var answer:Bool = false
     @State var button1:Bool = true
@@ -59,19 +59,19 @@ struct NegotiationView: View {
                                 Text("If you quit this negotiation, all progress will be lost.")
                             }
                             
-                            
-                            NavigationLink(destination: replayBackgroundview(question: self.i, item: item), isActive:self.$isSeeBackground){
-                                    EmptyView()
-                                }
                             Image("negotiation_background").frame(alignment: .trailing).padding(.top,-170).padding(.leading,250).onTapGesture {
-                                self.isSeeBackground = true
+                                    self.isSeeBackground = true
+                            }.alert("Objectives Reminder", isPresented: $isSeeBackground){
+                                Button("Continue", role: .cancel){}
+                            } message: {
+                                Text("\(storyDetail[0].objectives!)")
                             }
                         }
                         ZStack{
-                            Image(myQuiz1[self.i].img!).frame(height: 300, alignment: .bottom).offset(y: 100) // ini buat gambar orangnya biar ga melayang
+                            Image(myQuiz1[self.i].img!).frame(height: 300, alignment: .bottom).offset(y: 100)
                             ZStack{
                                 Image("chatbox")
-                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
+                                Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) 
                             }.padding(.top,300)
                         }
                     }.frame(height: 500).scaledToFill()
@@ -265,7 +265,6 @@ struct NegotiationView: View {
         self.swiftUISpeech.isRecordButton.toggle()
         self.answer.toggle()
         self.swiftUISpeech.outputText = ""
-        print(self.i)
     }
     
     func buttonAction (option:Int){

@@ -72,7 +72,7 @@ var myQuiz1 : [QuizModel] = [
 
     QuizModel(img: "explain",
     text: "The normal production time required is 7 days.",
-    answer: ["Too long, I only have 3 days", "The item will be used at the end of this week. Can it be finished in three days?", "My boss will be angry if it takes too long, how about three days?"],
+    answer: ["Too long, I only have three days", "The item will be used at the end of this week. Can it be finished in three days?", "My boss will be angry if it takes too long, how about three days?"],
     load_ques: [4,4,4],
     questionKey: 5,
     feedbackString: ["None", "None", "None"],
