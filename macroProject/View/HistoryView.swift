@@ -102,7 +102,44 @@ struct AchievedHistoryView: View{
     
     var body: some View{
         VStack{
-            Text("asu koe")
+            
+            ZStack{
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 390, height: 150)
+                    .foregroundColor(Color.white)
+                    .shadow(radius: 3)
+                HStack{
+                    Image("CompromisingMatrix").resizable().frame(width: 120, height: 120)
+                    VStack{
+                        VStack{
+                            Text("Ini judul").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
+                                .frame(width: 230, alignment: .topLeading)
+                            Text("ini style used").font(.system(size: 15, weight: .semibold)).frame(width: 230, alignment: .topLeading)
+                        }.frame(width: 240, height: 85, alignment: .topLeading).offset(y: -8)
+                        Text("Date: 11/06/2021").font(.system(size: 15, weight: .regular))
+                            .frame(width: 240, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                    }
+                }
+            }.frame(maxWidth: .infinity).offset(y:20)
+            
+//            List(knowledges, id: \.id){ knowledgeItem in
+//                NavigationLink(destination: TheoryKnowledgeView(knowledge: knowledgeItem)){
+//                    Image(knowledgeItem.image)
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 350, height: 65)
+//                        .offset(x: 10)
+//                }
+//
+//                .navigationBarBackButtonHidden(true)
+//                    .background(Color("yellow_tone"))
+//                    .listRowSeparator(.hidden)
+//                    .listRowBackground(Color("yellow_tone"))
+//            }
+//            .padding(.top)
+//            .scrollContentBackground(.hidden)
+//            .scrollDisabled(true)
+//            .offset(x: 0, y: -5)
         }
     }
 }

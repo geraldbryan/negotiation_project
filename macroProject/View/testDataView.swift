@@ -13,7 +13,6 @@ struct testDataView: View {
        
     @StateObject var play: Item
     
-    
     var body: some View {
         VStack{
             Text("Hello, World!")
