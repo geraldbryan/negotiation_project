@@ -46,9 +46,6 @@ struct NegotiationView: View {
                 VStack{
                     ZStack{
                         Image("background")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 300).frame(maxWidth: .infinity)
                         HStack {
                             NavigationLink(destination: HomeView(), isActive: $activateLink,
                                            label: { EmptyView() })
@@ -70,13 +67,13 @@ struct NegotiationView: View {
                             }
                         }
                         ZStack{
-                            Image(myQuiz1[self.i].img!) // ini buat gambar orangnya biar ga melayang
+                            Image(myQuiz1[self.i].img!).frame(height: 306, alignment: .bottom).offset(y: 100) // ini buat gambar orangnya biar ga melayang
                             ZStack{
                                 Image("chatbox")
                                 Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) //edit disini ya lauw
                             }.padding(.top,300)
                         }
-                    }.padding(.bottom,50)
+                    }frame(height: 500).scaledToFill()
                     
                     VStack(spacing: 20){
                         if (swiftUISpeech.outputText .compare(myQuiz1[self.i].answer[n].components(separatedBy: .punctuationCharacters).joined(), options: .caseInsensitive) == .orderedSame){
