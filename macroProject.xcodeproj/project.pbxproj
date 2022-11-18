@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0908675329278F0E000B8951 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908675229278F0E000B8951 /* Loading.swift */; };
 		9073802D292289E200765E05 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802B292289E100765E05 /* correct.wav */; };
 		9073802E292289E200765E05 /* false.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9073802C292289E200765E05 /* false.wav */; };
 		9073804F2926151500765E05 /* historyFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9073804E2926151500765E05 /* historyFeedbackView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0908675229278F0E000B8951 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		9073802B292289E100765E05 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		9073802C292289E200765E05 /* false.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = false.wav; sourceTree = "<group>"; };
 		9073804E2926151500765E05 /* historyFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyFeedbackView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B2C62CBF28E6E8D30004B988 /* TutorialView.swift */,
 				B2C62CC128E6E8DD0004B988 /* HistoryView.swift */,
 				B2A90C0C28E2DDBE00650F1C /* HomeView.swift */,
+				0908675229278F0E000B8951 /* Loading.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				90776D2C291CE62500B04006 /* VisualBarView.swift in Sources */,
 				B222286C29068AD300E8F30D /* MatrixFeedback.swift in Sources */,
 				90BAE1BA29015C89002B9889 /* SwiftUISpeech.swift in Sources */,
+				0908675329278F0E000B8951 /* Loading.swift in Sources */,
 				90776D25291A426300B04006 /* testView.swift in Sources */,
 				B2C62CC028E6E8D30004B988 /* TutorialView.swift in Sources */,
 				B2C62CC228E6E8DD0004B988 /* HistoryView.swift in Sources */,

@@ -132,7 +132,7 @@ struct HomeView: View {
                             Text("Test Core Data")
                         }
                         HStack(alignment: .bottom){
-                            NavigationLink(destination: backgroundview(), label: {
+                            NavigationLink(destination: Loading(), label: {
                                 Image( "Ready_button")
                                     .foregroundColor(.black)
                                     .frame(width: 363, height: 120)
