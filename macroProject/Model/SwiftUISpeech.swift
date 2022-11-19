@@ -154,5 +154,7 @@ public class SwiftUISpeech: ObservableObject{
     public var outputText:String = "";
     public var text:String = "";
     public var medal:String = "";
+    public var style:String = "";
+
     
 }

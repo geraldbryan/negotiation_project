@@ -15,6 +15,8 @@ struct feedbackView: View {
     
     @State var medal: String
     
+    @State var style: String
+    
     @StateObject var item: Item
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -112,6 +114,7 @@ struct feedbackView: View {
     func updateStyle(item: Item){
         item.objectives = self.medal
         item.feedback = self.feedback
+        item.style = self.style
         
         do {
             try viewContext.save()
