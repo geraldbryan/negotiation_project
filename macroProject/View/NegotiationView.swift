@@ -245,7 +245,7 @@ struct NegotiationView: View {
                 
             }.navigationBarHidden(true).ignoresSafeArea()
         }else{
-            feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal, item: item)
+            feedbackView(feedback: self.swiftUISpeech.text, medal: self.swiftUISpeech.medal, style: self.swiftUISpeech.style, item: item)
         }
     }
     
@@ -275,6 +275,7 @@ struct NegotiationView: View {
         
         self.swiftUISpeech.text = myQuiz1[self.i].feedbackString[option]
         self.swiftUISpeech.medal = myQuiz1[self.i].medal[option]
+        self.swiftUISpeech.style = myQuiz1[self.i].styleUsed[option]
         
         let newNegotiation = Negotiation(context: viewContext)
         newNegotiation.question = myQuiz1[self.i].text

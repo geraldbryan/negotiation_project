@@ -100,60 +100,78 @@ struct ChoosenHistoryView: View{
 
 struct AchievedHistoryView: View{
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
+    
     var body: some View{
         VStack{
-            
-            ZStack{
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 390, height: 150)
-                    .foregroundColor(Color.white)
-                    .shadow(radius: 3)
-                HStack{
-                    Image("CompromisingMatrix").resizable().frame(width: 120, height: 120)
-                    VStack{
+            ForEach(items) { item in
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 360, height: 150)
+                        .foregroundColor(Color.white)
+                        .shadow(radius: 3)
+                    HStack{
+                        Image("history_image").resizable().frame(width: 90, height: 90)
                         VStack{
-                            Text("Ini judul").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
-                                .frame(width: 230, alignment: .topLeading)
-                            Text("ini style used").font(.system(size: 15, weight: .semibold)).frame(width: 230, alignment: .topLeading)
-                        }.frame(width: 240, height: 85, alignment: .topLeading).offset(y: -8)
-                        Text("Date: 11/06/2021").font(.system(size: 15, weight: .regular))
-                            .frame(width: 240, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                            VStack{
+                                Text(item.story ?? "").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
+                                    .frame(width: 200, alignment: .topLeading)
+                                Text("Style Used: \(item.style ?? "not yet")").font(.system(size: 15, weight: .semibold)).frame(width: 200, alignment: .topLeading)
+                            }.frame(width: 210, height: 85, alignment: .topLeading).offset(y: -8)
+                            Text(item.timestamp!, formatter: itemFormatter).font(.system(size: 15, weight: .regular))
+                                .frame(width: 210, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                        }.offset(x: 10)
                     }
-                }
-            }.frame(maxWidth: .infinity).offset(y:20)
-            
-//            List(knowledges, id: \.id){ knowledgeItem in
-//                NavigationLink(destination: TheoryKnowledgeView(knowledge: knowledgeItem)){
-//                    Image(knowledgeItem.image)
-//                        .resizable()
-//                        .scaledToFill()
-//                        .frame(width: 350, height: 65)
-//                        .offset(x: 10)
-//                }
-//
-//                .navigationBarBackButtonHidden(true)
-//                    .background(Color("yellow_tone"))
-//                    .listRowSeparator(.hidden)
-//                    .listRowBackground(Color("yellow_tone"))
-//            }
-//            .padding(.top)
-//            .scrollContentBackground(.hidden)
-//            .scrollDisabled(true)
-//            .offset(x: 0, y: -5)
+                }.frame(maxWidth: .infinity).offset(y:20)
+            }
         }
     }
+    
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy '-' HH:mm:ss 'WIB'"
+        return formatter
+    }()
 }
 
 struct HalfHistoryView: View{
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
     
     var body: some View{
         VStack{
             Text("anj")
         }
     }
+    
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy '-' HH:mm:ss 'WIB'"
+        return formatter
+    }()
 }
 
 struct NotAchievedHistoryView: View{
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
     
     var body: some View{
         VStack{
@@ -161,6 +179,12 @@ struct NotAchievedHistoryView: View{
         }
     }
 }
+
+private let itemFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy '-' HH:mm 'WIB'"
+    return formatter
+}()
 
 struct HistoryView_Previews: PreviewProvider{
     static var previews: some View{

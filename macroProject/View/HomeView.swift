@@ -33,7 +33,7 @@ struct NetworkConnection: View{
                 Button(action: {self.showAlertSheet = true}) {
                     Image("inet_button")
                         .frame(width: 115, height: 150)
-                }.offset(x: -100,y: -350)
+                }.offset(x: -90,y: -350)
             }
             .alert(isPresented: $showAlertSheet, content: {
                 if monitor.isConnected{
@@ -60,25 +60,12 @@ struct HomeView: View {
                 
                 if monitor.isConnected{
                     VStack(spacing: 20){
-                        ZStack{
-                            Image("hand")
-                                .resizable()
-                                .frame(width: 200, height: 150)
-                            Image("bulb")
-                                .offset(x: 150, y: -70)
-                            Image("coin")
-                                .offset(x: -120, y: 70)
-                            Image("panah")
-                                .offset(x:-150, y: -70)
-                            Image("graph")
-                                .offset(x: 120, y: 70)
-                        }.background(
-                            RoundedCornersCustom(corners: [.bottomRight], radius: 100)
-                                .fill(Color("kotak"))
-                                .frame(width: 430,height: 350)
-                                .shadow(radius: 15)
-                        )
-                        .frame(height: 330)
+                        Image("home_image")
+                            .resizable()
+                            .frame(width: .infinity)
+                            .frame(height: 380)
+                            .scaledToFill()
+                            .shadow(radius: 20)
                         
                         HStack(alignment: .bottom){
                             Text("Menu")

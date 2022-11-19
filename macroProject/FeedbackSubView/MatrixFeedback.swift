@@ -109,45 +109,6 @@ struct MatrixFeedback: View{
                     }.frame(height: 260)
                     
                     VStack{
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 25)
-                                .foregroundColor(.white)
-                                .shadow(radius: 2)
-                                .frame(width: 250)
-                            VStack{
-                                Text("It seems difficult to complete in 3 days, the workload will also make it difficult for our employees")
-                                    .font(.system(size: 15, weight: .light))
-                                    .frame(width: 230, height: 60, alignment: .center)
-                                    .foregroundColor(Color(.black))
-                            }
-                        }.frame(width: 70,height: 100, alignment: .trailing)
-                            .offset(x: 40, y: 70)
-                        
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 25)
-                                .foregroundColor(Color("green_tone"))
-                                .shadow(radius: 2)
-                                .frame(width: 250)
-                            VStack{
-                                Text("I understand, is there any suggestion to speed up the production?")
-                                    .font(.system(size: 15, weight: .light))
-                                    .frame(width: 230, height: 60, alignment: .center)
-                                    .foregroundColor(.white)
-                            }
-                        }.frame(width: 70,height: 100, alignment: .leading)
-                            .offset(x: -40, y: 80)
-                        
-                        VStack{
-                            Text("The answer you choose is correct. Be sure to explain the reason for the offer you are making and use polite word and expression.")
-                                .font(.system(size: 15, weight: .light))
-                                .frame(width: 350, height: 80, alignment: .leading)
-                                .foregroundColor(Color(.black))
-                        }.offset(y: 90)
-                        Divider().frame(width: 350).offset(y: 90)
-                    }.frame(height: 350)
-                        .offset(y: 10)
-                    
-                    VStack{
                         Text("")
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 200, alignment: .leading)

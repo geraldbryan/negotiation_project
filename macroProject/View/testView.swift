@@ -51,7 +51,6 @@ struct testView: View {
                         Divider()
                 }
                 }
-
             }
         }
     }
