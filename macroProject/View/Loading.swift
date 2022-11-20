@@ -28,11 +28,7 @@ struct Loading: View {
                         .ui.primary
                         .ignoresSafeArea()
                     VStack{
-                        Image("negotiator")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(
-                                .bottom, 10)
+                        GifImage(name: "lari100%").scaledToFill().frame(height: 500)
                         Text("Preparing Your Case")
                             .foregroundColor(
                                 .white)
@@ -50,9 +46,9 @@ struct Loading: View {
                             .padding()
                         Spacer()
                         CircularProgressBarDemo().padding()
-                        Spacer()
                     }
                     .padding()
+                    .frame(width: 360)
                 }.onAppear {
                     
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {

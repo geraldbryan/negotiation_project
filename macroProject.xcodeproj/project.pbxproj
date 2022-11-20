@@ -26,6 +26,7 @@
 		90BAE1C629016042002B9889 /* NegotiationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAE1C529016042002B9889 /* NegotiationView.swift */; };
 		B20B2D8828E6B7EB007E690D /* TheoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20B2D8728E6B7EB007E690D /* TheoryView.swift */; };
 		B222286C29068AD300E8F30D /* MatrixFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222286B29068AD300E8F30D /* MatrixFeedback.swift */; };
+		B264AA1A29293EAB0094ECE0 /* lari100%.gif in Resources */ = {isa = PBXBuildFile; fileRef = B264AA1929293EAB0094ECE0 /* lari100%.gif */; };
 		B26DC7D8291933E100FF5688 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DC7D7291933E100FF5688 /* NetworkMonitor.swift */; };
 		B282501A28FE90DE00450060 /* TheoryKnowledgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282501928FE90DE00450060 /* TheoryKnowledgeView.swift */; };
 		B282501C28FE910600450060 /* Knowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282501B28FE910600450060 /* Knowledge.swift */; };
@@ -67,6 +68,7 @@
 		90BAE1C529016042002B9889 /* NegotiationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegotiationView.swift; sourceTree = "<group>"; };
 		B20B2D8728E6B7EB007E690D /* TheoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryView.swift; sourceTree = "<group>"; };
 		B222286B29068AD300E8F30D /* MatrixFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixFeedback.swift; sourceTree = "<group>"; };
+		B264AA1929293EAB0094ECE0 /* lari100%.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "lari100%.gif"; sourceTree = "<group>"; };
 		B26DC7D7291933E100FF5688 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B282501928FE90DE00450060 /* TheoryKnowledgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryKnowledgeView.swift; sourceTree = "<group>"; };
 		B282501B28FE910600450060 /* Knowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knowledge.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				B26DC7D9291934E400FF5688 /* Network */,
 				B2A90BF728E18CA800650F1C /* ContentView.swift */,
 				B2A90BF528E18CA800650F1C /* macroProjectApp.swift */,
+				B264AA1929293EAB0094ECE0 /* lari100%.gif */,
 				B2B9FABE29239A8C005E87D2 /* full_medal.gif */,
 				B2B9FABF29239A8D005E87D2 /* half_medal.gif */,
 				B2B9FAC029239A8D005E87D2 /* no_medal.gif */,
@@ -297,6 +300,7 @@
 				B2A90BFA28E18CA900650F1C /* Assets.xcassets in Resources */,
 				9073802D292289E200765E05 /* correct.wav in Resources */,
 				B2B9FAC129239A8D005E87D2 /* full_medal.gif in Resources */,
+				B264AA1A29293EAB0094ECE0 /* lari100%.gif in Resources */,
 				B2B9FAC229239A8D005E87D2 /* half_medal.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

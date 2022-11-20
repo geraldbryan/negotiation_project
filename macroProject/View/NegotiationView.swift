@@ -46,29 +46,31 @@ struct NegotiationView: View {
                 VStack{
                     ZStack{
                         Image("background").resizable()
-
-                        HStack {
-                            NavigationLink(destination: HomeView(), isActive: $activateLink,
-                                           label: { EmptyView() })
-                            Image("negotiation_out").frame(alignment: .leading).padding(.top,-170).onTapGesture {
-                                showActionSheet = true
-                            }.alert("Are you Sure?", isPresented: $showActionSheet) {
-                                Button("No", role: .cancel){ }
-                                Button("Yes", role: .destructive, action: quitGame)
-                            } message: {
-                                Text("If you quit this negotiation, all progress will be lost.")
-                            }
-                            
-                            Image("negotiation_background").frame(alignment: .trailing).padding(.top,-170).padding(.leading,250).onTapGesture {
-                                    self.isSeeBackground = true
-                            }.alert("Objectives Reminder", isPresented: $isSeeBackground){
-                                Button("Continue", role: .cancel){}
-                            } message: {
-                                Text("\(storyDetail[0].objectives!)")
-                            }
-                        }
+                        
                         ZStack{
                             Image(myQuiz1[self.i].img!).frame(height: 300, alignment: .bottom).offset(y: 100)
+                            ZStack{
+                                HStack {
+                                    NavigationLink(destination: HomeView(), isActive: $activateLink,
+                                                   label: { EmptyView() })
+                                    Image("negotiation_out").frame(alignment: .leading).padding(.top,-170).onTapGesture {
+                                        showActionSheet = true
+                                    }.alert("Are you Sure?", isPresented: $showActionSheet) {
+                                        Button("No", role: .cancel){ }
+                                        Button("Yes", role: .destructive, action: quitGame)
+                                    } message: {
+                                        Text("If you quit this negotiation, all progress will be lost.")
+                                    }
+                                    
+                                    Image("negotiation_background").frame(alignment: .trailing).padding(.top,-170).padding(.leading,250).onTapGesture {
+                                            self.isSeeBackground = true
+                                    }.alert("Objectives Reminder", isPresented: $isSeeBackground){
+                                        Button("Continue", role: .cancel){}
+                                    } message: {
+                                        Text("\(storyDetail[0].objectives!)")
+                                    }
+                                }
+                            }
                             ZStack{
                                 Image("chatbox")
                                 Text(myQuiz1[self.i].text!).padding(.leading,35).padding(.trailing,35).padding(.top,10).foregroundColor(.black).frame(maxWidth: 350) 

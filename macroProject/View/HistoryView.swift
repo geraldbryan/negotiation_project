@@ -17,6 +17,7 @@ struct HistoryView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var selectedSide: historyChoices = .notAchieved
     
+    
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }){
@@ -57,9 +58,6 @@ struct HistoryView: View {
                     VStack(spacing: 0){
                             
                         ChoosenHistoryView(selectedSide: selectedSide)
-                        Image("history_empty")
-                            .offset(y: 50)
-
                     }
                 }.frame(maxHeight: .infinity)
             }
@@ -103,33 +101,42 @@ struct AchievedHistoryView: View{
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)], predicate: NSPredicate(format: "objectives == %@", "full_medal"),animation: .default)
     
     private var items: FetchedResults<Item>
     
     var body: some View{
-        VStack{
-            ForEach(items) { item in
-                ZStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 360, height: 150)
-                        .foregroundColor(Color.white)
-                        .shadow(radius: 3)
-                    HStack{
-                        Image("history_image").resizable().frame(width: 90, height: 90)
-                        VStack{
-                            VStack{
-                                Text(item.story ?? "").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
-                                    .frame(width: 200, alignment: .topLeading)
-                                Text("Style Used: \(item.style ?? "not yet")").font(.system(size: 15, weight: .semibold)).frame(width: 200, alignment: .topLeading)
-                            }.frame(width: 210, height: 85, alignment: .topLeading).offset(y: -8)
-                            Text(item.timestamp!, formatter: itemFormatter).font(.system(size: 15, weight: .regular))
-                                .frame(width: 210, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
-                        }.offset(x: 10)
+        
+        if items.count != 0 {
+            VStack{
+                ForEach(items) { item in
+                    NavigationLink(destination: histotyFeedbackView(play: item)){
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 360, height: 150)
+                                .foregroundColor(Color.white)
+                                .shadow(radius: 3)
+                            HStack{
+                                Image("history_image").resizable().frame(width: 90, height: 90)
+                                VStack{
+                                    VStack{
+                                        Text(item.story ?? "").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
+                                            .frame(width: 200, alignment: .topLeading)
+                                            .multilineTextAlignment(.leading)
+                                        Text("Style Used: \(item.style ?? "not yet")").foregroundColor(.black)
+                                            .font(.system(size: 15, weight: .semibold)).frame(width: 200, alignment: .topLeading)
+                                    }.frame(width: 210, height: 85, alignment: .topLeading).offset(y: -8)
+                                    Text(item.timestamp!, formatter: itemFormatter).font(.system(size: 15, weight: .regular))
+                                        .frame(width: 210, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                                }.offset(x: 10)
+                            }
+                        }.frame(maxWidth: .infinity).offset(y:20)
                     }
-                }.frame(maxWidth: .infinity).offset(y:20)
+                }
             }
+        } else {
+            Image("history_empty")
+                .offset(y: 50)
         }
     }
     
@@ -145,14 +152,42 @@ struct HalfHistoryView: View{
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)], predicate: NSPredicate(format: "objectives == %@", "half_medal"),animation: .default)
     
     private var items: FetchedResults<Item>
     
     var body: some View{
-        VStack{
-            Text("anj")
+        if items.count != 0 {
+            VStack{
+                ForEach(items) { item in
+                    NavigationLink(destination: histotyFeedbackView(play: item)){
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 360, height: 150)
+                                .foregroundColor(Color.white)
+                                .shadow(radius: 3)
+                            HStack{
+                                Image("history_image").resizable().frame(width: 90, height: 90)
+                                VStack{
+                                    VStack{
+                                        Text(item.story ?? "").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
+                                            .frame(width: 200, alignment: .topLeading)
+                                            .multilineTextAlignment(.leading)
+                                        Text("Style Used: \(item.style ?? "not yet")")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 15, weight: .semibold)).frame(width: 200, alignment: .topLeading)
+                                    }.frame(width: 210, height: 85, alignment: .topLeading).offset(y: -8)
+                                    Text(item.timestamp!, formatter: itemFormatter).font(.system(size: 15, weight: .regular))
+                                        .frame(width: 210, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                                }.offset(x: 10)
+                            }
+                        }.frame(maxWidth: .infinity).offset(y:20)
+                    }
+                }
+            }
+        } else {
+            Image("history_empty")
+                .offset(y: 50)
         }
     }
     
@@ -168,14 +203,41 @@ struct NotAchievedHistoryView: View{
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)], predicate: NSPredicate(format: "objectives == %@", "no_medal"),animation: .default)
     
     private var items: FetchedResults<Item>
     
     var body: some View{
-        VStack{
-            Text("kampret")
+        if items.count != 0 {
+            VStack{
+                ForEach(items) { item in
+                    NavigationLink(destination: histotyFeedbackView(play: item)){
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 360, height: 150)
+                                .foregroundColor(Color.white)
+                                .shadow(radius: 3)
+                            HStack{
+                                Image("history_image").resizable().frame(width: 90, height: 90)
+                                VStack{
+                                    VStack{
+                                        Text(item.story ?? "").font(.system(size: 25, weight: .bold)).foregroundColor(Color("green_tone"))
+                                            .frame(width: 200, alignment: .topLeading)
+                                            .multilineTextAlignment(.leading)
+                                        Text("Style Used: \(item.style ?? "not yet")").font(.system(size: 15, weight: .semibold)).frame(width: 200, alignment: .topLeading)
+                                            .foregroundColor(Color.black)
+                                    }.frame(width: 210, height: 85, alignment: .topLeading).offset(y: -8)
+                                    Text(item.timestamp!, formatter: itemFormatter).font(.system(size: 15, weight: .regular))
+                                        .frame(width: 210, alignment: .leadingLastTextBaseline).offset(y: -10).foregroundColor(Color.gray)
+                                }.offset(x: 10)
+                            }
+                        }.frame(maxWidth: .infinity).offset(y:20)
+                    }
+                }
+            }
+        } else {
+            Image("history_empty")
+                .offset(y: 50)
         }
     }
 }

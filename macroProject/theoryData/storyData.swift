@@ -102,7 +102,7 @@ var myQuiz1 : [QuizModel] = [
 
     QuizModel(img: "attention",
     text: "If you want to cancel, at least pay the finished products",
-    answer: ["ok, here is your money", "No, whatever", "Alright, how much the additional fee is?"],
+    answer: ["ok, here is your money", "No, whatever", "All right, how much the additional fee is?"],
     load_ques: [101,9,10],
     questionKey: 8,
     feedbackString: ["You used the 'Avoiding' style, it is better to use 'Collaborating' style in this case!", "None", "None"],
@@ -152,7 +152,7 @@ var myQuiz1 : [QuizModel] = [
 
     QuizModel(img: "oke",
     text: "What a good deal, I take that",
-    answer: ["Alright, I will come back here in three days", "Thank you, it is a pleasure to work with you", "Deal, thank you for your cooperation"],
+    answer: ["All right, I will come back here in three days", "Thank you, it is a pleasure to work with you", "Deal, thank you for your cooperation"],
     load_ques: [100,100,100],
     questionKey: 13,
     feedbackString: ["You managed to use the 'Collaborating' style which is the best style in this case.", "You managed to use the 'Collaborating' style which is the best style in this case.", "You managed to use the 'Collaborating' style which is the best style in this case."],

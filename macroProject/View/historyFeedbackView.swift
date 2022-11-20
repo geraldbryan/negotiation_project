@@ -13,6 +13,8 @@ struct histotyFeedbackView: View {
        
     @StateObject var play: Item
     
+    @State var showAlert: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
         var btnBack : some View { Button(action: {
@@ -89,11 +91,19 @@ struct histotyFeedbackView: View {
                         }
                     }
             
-                    Image("matrix")
-                        .frame(width: 346, height: 67).padding(12)
+                    NavigationLink(destination: MatrixFeedback(play : play)){
+                        Image("matrix")
+                            .frame(width: 346, height: 67).padding(12)
+                    }
                         
-                    Image("confidence")
-                        .frame(width: 346, height: 67).padding(.horizontal,12)
+                    Button(action: {self.showAlert.toggle()}) {
+                        Image("confidence")
+                            .frame(width: 346, height: 67).padding(.horizontal,12)
+                    }.alert("We are sorry", isPresented: $showAlert) {
+                        Button("Okay", role: .cancel) { }
+                    } message: {
+                        Text("We are very sorry this Confident Feedback page hasn't been finished develop yet. Don't worry you still can practice the negotiation.")
+                    }
                 }
             }
         }.navigationBarItems(leading: btnBack)

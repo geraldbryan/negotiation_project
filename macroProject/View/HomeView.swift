@@ -115,9 +115,6 @@ struct HomeView: View {
                                 .foregroundColor(.black)
                         }
                         
-                        NavigationLink(destination: testView()){
-                            Text("Test Core Data")
-                        }
                         HStack(alignment: .bottom){
                             NavigationLink(destination: Loading(), label: {
                                 Image( "Ready_button")

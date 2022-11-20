@@ -9,6 +9,14 @@ import SwiftUI
 
 struct MatrixFeedback: View{
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Negotiation.timestamp, ascending: true)],
+//        animation: .default)
+    
+    @StateObject var play: Item
 
     var btnBackMatrixFeedback : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
@@ -51,71 +59,84 @@ struct MatrixFeedback: View{
                     HStack{
                         Image(systemName: "peacesign")
                             .font(.system(size: 25, weight: .bold))
-                        Text("Compromising")
+                        Text("\(play.style ?? "not yet")")
                             .font(.system(size: 25, weight: .bold))
                     }.frame(width: 350, height: 45, alignment: .leading)
                         .offset(y: 20)
                         .foregroundColor(Color(.black))
-                    
+
                     VStack{
-                        Text("The printing company stated that they willing to speed up the order with extra charge of they wanted. up the order with extra charge of they wanted. ")
+                        Text("\(play.styleDescription ?? "Please finish the story first")")
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, height: 80, alignment: .leading)
                             .foregroundColor(Color(.black))
                     }.offset(y: 30)
                     
+                    Spacer()
+                    
                     Text("Answer Evaluation")
                         .font(.system(size: 24, weight: .bold))
-                        .frame(width: 350, height: 80, alignment: .leading)
+                        .frame(width: 350, height: 0, alignment: .leading)
                         .foregroundColor(Color("green_tone"))
-                        .offset(y: 30)
+                        .offset(y: 50)
                     
-                    VStack{
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 25)
-                                .foregroundColor(.white)
-                                .shadow(radius: 2)
-                                .frame(width: 250)
-                            VStack{
-                                Text("For you order, the normal production time required is 7 days")
-                                    .font(.system(size: 15, weight: .light))
-                                    .frame(width: 230, height: 60, alignment: .center)
-                                    .foregroundColor(Color(.black))
-                            }
-                        }.frame(width: 70,height: 100, alignment: .trailing)
-                            .offset(x: 40, y: 40)
-                        
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 25)
-                                .foregroundColor(Color("green_tone"))
-                                .shadow(radius: 2)
-                                .frame(width: 250)
-                            VStack{
-                                Text("The item will be used at the end of this week. can it be finished in 3 days?")
-                                    .font(.system(size: 15, weight: .light))
-                                    .frame(width: 230, height: 60, alignment: .center)
-                                    .foregroundColor(.white)
-                            }
-                        }.frame(width: 70,height: 100, alignment: .leading)
-                            .offset(x: -40, y: 50)
-                        
+                    ForEach(Array(play.negotiations! as! Set<Negotiation>).sorted{
+                        $0.timestamp ?? Date() < $1.timestamp ?? Date()
+                    }, id: \.self){ answer in
                         VStack{
-                            Text("By explaining the reason of your offer with polite word and expression, you can maintain the relationship")
-                                .font(.system(size: 15, weight: .light))
-                                .frame(width: 350, height: 80, alignment: .leading)
-                                .foregroundColor(Color(.black))
-                        }.offset(y: 60)
-                        Divider().frame(width: 350).offset(y: 60)
-                    }.frame(height: 260)
-                    
+                            VStack{
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .foregroundColor(.white)
+                                        .shadow(radius: 2)
+                                        .frame(width: 250)
+                                    VStack{
+                                        Text("\(answer.question ?? "")")
+                                            .font(.system(size: 15, weight: .light))
+                                            .frame(width: 230, height: 60, alignment: .center)
+                                            .foregroundColor(Color(.black))
+                                    }
+                                }.frame(width: 70,height: 100, alignment: .trailing)
+                                    .offset(x: 40, y: 40)
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .foregroundColor(Color("green_tone"))
+                                        .shadow(radius: 2)
+                                        .frame(width: 250)
+                                    VStack{
+                                        Text("\(answer.answer ?? "")")
+                                            .font(.system(size: 15, weight: .light))
+                                            .frame(width: 230, height: 60, alignment: .center)
+                                            .foregroundColor(.white)
+                                    }
+                                }.frame(width: 70,height: 100, alignment: .leading)
+                                    .offset(x: -40, y: 50)
+                                
+                                VStack{
+                                    Text("\(answer.feedback ?? "")")
+                                        .font(.system(size: 15, weight: .light))
+                                        .frame(width: 350, height: 80, alignment: .leading)
+                                        .foregroundColor(Color(.black))
+                                }.offset(y: 60)
+                                Divider().frame(width: 350).offset(y: 60)
+                            }.frame(height: 260)
+                            
+                            VStack{
+                                Text("")
+                                    .font(.system(size: 18, weight: .bold))
+                                    .frame(width: 350, height: 80, alignment: .leading)
+                            }
+                        }.offset(y: 70)
+                    }
+        
                     VStack{
                         Text("")
                             .font(.system(size: 18, weight: .bold))
-                            .frame(width: 350, height: 200, alignment: .leading)
+                            .frame(width: 350, height: 80, alignment: .leading)
                     }
-                }.offset(y: 50)
-            }
-            .scrollIndicators(.hidden)
+                }.frame(width: 420)
+            }.scrollIndicators(.hidden).frame(maxHeight: .infinity).offset(y: 20)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBackMatrixFeedback)
@@ -128,10 +149,10 @@ struct MatrixFeedback: View{
     }
 }
 
-struct MatrixFeedbackView_Previews: PreviewProvider{
-    static var previews: some View{
-        MatrixFeedback()
-    }
-}
+//struct MatrixFeedbackView_Previews: PreviewProvider{
+//    static var previews: some View{
+//        MatrixFeedback(play: item)
+//    }
+//}
 
 

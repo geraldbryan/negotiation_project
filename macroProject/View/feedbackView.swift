@@ -17,7 +17,15 @@ struct feedbackView: View {
     
     @State var style: String
     
+    @State var showAlert: Bool = false
+    
     @StateObject var item: Item
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
     
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -93,11 +101,19 @@ struct feedbackView: View {
                         }
                     }
             
-                    Image("matrix")
-                        .frame(width: 346, height: 67).padding(12)
-                        
-                    Image("confidence")
-                        .frame(width: 346, height: 67).padding(.horizontal,12)
+                    NavigationLink(destination: MatrixFeedback(play : item)){
+                        Image("matrix")
+                            .frame(width: 346, height: 67).padding(12)
+                    }
+                    
+                    Button(action: {self.showAlert.toggle()}) {
+                        Image("confidence")
+                            .frame(width: 346, height: 67).padding(.horizontal,12)
+                    }.alert("We are sorry", isPresented: $showAlert) {
+                        Button("Okay", role: .cancel) { }
+                    } message: {
+                        Text("We are very sorry this Confident Feedback page hasn't been finished develop yet. Don't worry you still can practice the negotiation.")
+                    }
                 }
             }
         }.navigationBarItems(leading: btnBack)
