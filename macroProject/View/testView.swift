@@ -6,53 +6,39 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct testView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    
-    private var items: FetchedResults<Item>
+//    1159, 1070, 1075, 1053, 1054, 1055, 1033, 1006
     
     var body: some View {
-        
-//        ZStack{
-//            Color.blue
-//            VStack{
-//                GifImage(name: "medalfullbg").frame(height: 400).offset()
-//            }
-//        }
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        List {
-            ForEach(items) { item in
-                NavigationLink(destination: testDataView(play: item)){
-                    VStack{
-                        HStack{
-                            Text(item.objectives ?? "abca")
-                            Text("-")
-                            Text(item.feedback ?? "no feedback")
-                            Text("-")
-                            Text(item.image ?? "no feedback")
-                        }
-                        
-                        Divider()
-                        Text(item.story ?? "")
-                        Divider()
-                        Text(item.timestamp!, formatter: itemFormatter)
-                        Divider()
-                        Text(item.styleDescription ?? "")
-                        Divider()
-                        HStack{
-                            Text("BEST STYLE: \(item.bestStyle ?? "not yet")")
-                            Text("USED STYLE: \(item.style ?? "not yet")")
-                        }.padding(10)
-                        Divider()
-                }
-                }
+        VStack{
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1006))}) {
+                Text("sound 1006")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1159))}) {
+                Text("sound 1159")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1070))}) {
+                Text("sound 1070")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1075))}) {
+                Text("sound 1075")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1053))}) {
+                Text("sound 1053")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1054))}) {
+                Text("sound 1054")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1055))}) {
+                Text("sound 1055")
+            }
+            Button(action: {AudioServicesPlayAlertSound(SystemSoundID(1033))}) {
+                Text("sound 1033")
             }
         }
+        
     }
 }
 

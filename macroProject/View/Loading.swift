@@ -42,7 +42,7 @@ struct Loading: View {
                             .font(
                                 .system(size: 14))
                             .multilineTextAlignment(
-                                .center)
+                                .center).frame(height:50)
                             .padding()
                         Spacer()
                         CircularProgressBarDemo().padding()

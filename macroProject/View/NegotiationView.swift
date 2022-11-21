@@ -258,9 +258,7 @@ struct NegotiationView: View {
     }
     
     func playFalse(){
-        let sound = Bundle.main.path(forResource: "false", ofType: "wav")
-        self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-        self.audioPlayer.play()
+        AudioServicesPlayAlertSound(SystemSoundID(1055))
     }
     
     func redo(){
