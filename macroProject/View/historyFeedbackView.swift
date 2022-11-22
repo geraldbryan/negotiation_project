@@ -70,7 +70,7 @@ struct histotyFeedbackView: View {
                             Rectangle()
                                             .fill(Color("red_tone"))
                                             .frame(width: 365, height: 78).cornerRadius(10).padding(12)
-                            Text("\(play.feedback ?? "good job!")")
+                            Text("\(play.feedback ?? "Too bad you were unable to finish the case. Let’s start negotiation again to accelerate your negotiation and get feedbacks from us!")")
                                 .font(.system(size: 14)).foregroundColor(.white).frame(width: 345, height: 78).padding(.horizontal,20)
                         }
                     } else if play.objectives == "half_medal"{
@@ -81,15 +81,16 @@ struct histotyFeedbackView: View {
                             Text("\(play.feedback ?? "good job!")")
                                 .font(.system(size: 14)).foregroundColor(.black).frame(width: 345, height: 78).padding(.horizontal,20)
                         }
-                    } else {
-                        ZStack{
-                            Rectangle()
-                                            .fill(Color("red_tone"))
-                                            .frame(width: 365, height: 78).cornerRadius(10).padding(12)
-                            Text("Too bad you were unable to finish the case. Let’s start negotiation again to accelerate your negotiation and get feedbacks from us!")
-                                .font(.system(size: 14)).foregroundColor(.white).frame(width: 345, height: 78).padding(.horizontal,20)
-                        }
                     }
+//                    else {
+//                        ZStack{
+//                            Rectangle()
+//                                            .fill(Color("red_tone"))
+//                                            .frame(width: 365, height: 78).cornerRadius(10).padding(12)
+//                            Text("Too bad you were unable to finish the case. Let’s start negotiation again to accelerate your negotiation and get feedbacks from us!")
+//                                .font(.system(size: 14)).foregroundColor(.white).frame(width: 345, height: 78).padding(.horizontal,20)
+//                        }
+//                    }
             
                     NavigationLink(destination: MatrixFeedback(play : play)){
                         Image("matrix")
