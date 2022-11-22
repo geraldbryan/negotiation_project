@@ -268,13 +268,27 @@ struct NegotiationView: View {
     }
     
     func playCorrect(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
         let sound = Bundle.main.path(forResource: "correct", ofType: "wav")
         self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         self.audioPlayer.play()
     }
     
     func playFalse(){
-        AudioServicesPlayAlertSound(SystemSoundID(1055))
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        let sound = Bundle.main.path(forResource: "false", ofType: "wav")
+        self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        self.audioPlayer.play()
     }
     
     func redo(){
