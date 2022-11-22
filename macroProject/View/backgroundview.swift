@@ -20,7 +20,7 @@ struct backgroundview: View {
     @State var activateLink: Bool = false
 
     var body: some View {
-        NavigationView{
+        NavigationStack{
             ZStack{
                 Color("green_tone").ignoresSafeArea()
                 VStack(spacing:30){
@@ -64,8 +64,6 @@ struct backgroundview: View {
                                 .offset(x: 10)
                         }
                         .offset(y: -50)
-                        
-                        
                     }
                     Button(action: addItem){
                         ZStack{
@@ -73,27 +71,23 @@ struct backgroundview: View {
                             Text("Understand").foregroundColor(.black).font(.system(size: 24)).bold()
                         }.padding(.top,-10)
                     }
-                    VStack{
-                        NavigationLink(destination: 
-                                        NegotiationView(item: items[items.count-1])
-                            .environmentObject(SwiftUISpeech()),isActive: $activateLink,
-                                       label: { EmptyView()})
-                    }
                 }
                 
-            }
+            }.navigationDestination(isPresented: $activateLink) {
+                NegotiationView(item: items[items.count-1]).environmentObject(SwiftUISpeech())
+            }.navigationBarBackButtonHidden(true)
         }.navigationBarHidden(true).ignoresSafeArea()
     }
     
     private func addItem() {
-        withAnimation {
-            self.activateLink.toggle()
+            
             let newItem = Item(context: viewContext)
             newItem.story = storyDetail[0].title!
             newItem.timestamp = Date()
             newItem.styleDescription = storyDetail[0].description
             newItem.bestStyle = storyDetail[0].style
             newItem.image = storyDetail[0].img
+            newItem.objectives = "no_medal"
             
             do {
                 try viewContext.save()
@@ -101,7 +95,7 @@ struct backgroundview: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-        }
+            self.activateLink.toggle()
     }
 }
 

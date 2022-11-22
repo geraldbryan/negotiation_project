@@ -20,9 +20,9 @@ struct Loading: View {
     @State var isActive:Bool = false
     
     var body: some View {
-        if self.isActive {
+        if isActive{
             backgroundview()
-            } else {
+        } else {
                 ZStack(alignment: .top){
                     Color
                         .ui.primary
@@ -57,7 +57,10 @@ struct Loading: View {
                                 self.isActive = true
                             }
                         }
-            }.navigationBarHidden(true)
+                }.navigationBarHidden(true)
+//                .navigationDestination(isPresented: $isActive) {
+//                    backgroundview()
+//                }
         }
     }
 }
