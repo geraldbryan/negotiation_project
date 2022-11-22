@@ -471,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"macroProject/Preview Content\"";
-				DEVELOPMENT_TEAM = QUPYT94598;
+				DEVELOPMENT_TEAM = SPWBLKD667;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Accepting this means you are willing to have your information sent to Apple for processing";
@@ -504,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"macroProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 7PBR2Z4WU4;
+				DEVELOPMENT_TEAM = SPWBLKD667;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Accepting this means you are willing to have your information sent to Apple for processing";
