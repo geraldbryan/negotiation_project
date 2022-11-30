@@ -49,15 +49,6 @@ struct TheoryKnowledgeView: View{
                         .frame(width: 350, height: 40, alignment: .leading)
                     
                     Divider().frame(width: 200, alignment: .leading).offset(x: -80, y: 10)
-//                    HStack{
-//                        Image(systemName: knowledge.icon)
-//                            .font(.system(size: 25, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                        Text(knowledge.textIcon)
-//                            .font(.system(size: 25, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                    }.frame(width: 350, height: 45, alignment: .leading)
-//                        .offset(y: 30)
                     
                     VStack{
                         ZStack{
@@ -72,11 +63,7 @@ struct TheoryKnowledgeView: View{
                                     .foregroundColor(Color(.white))
                             }
                         }.frame(width: 370)
-//                        Image(systemName:"text.badge.star")
-//                            .font(.system(size: 40, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                            .frame(width: 350, height: 50, alignment: .leading)
-//                            .offset(x:15)
+                        
                         Text(knowledge.info1)
                             .font(.system(size: 15, weight: .regular))
                             .frame(width: 350, height: 80, alignment: .topLeading)
@@ -96,11 +83,6 @@ struct TheoryKnowledgeView: View{
                                     .foregroundColor(Color(.white))
                             }
                         }.frame(width: 370)
-//                        Image(systemName:"star.leadinghalf.filled")
-//                            .font(.system(size: 40, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                            .frame(width: 350, height: 50, alignment: .leading)
-//                            .offset(x:15)
                         Text(knowledge.info2)
                             .font(.system(size: 15, weight: .regular))
                             .frame(width: 350, height: 80, alignment: .topLeading)
@@ -120,11 +102,6 @@ struct TheoryKnowledgeView: View{
                                     .foregroundColor(Color(.white))
                             }
                         }.frame(width: 370)
-//                        Image(systemName:"person.2")
-//                            .font(.system(size: 40, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                            .frame(width: 350, height: 50, alignment: .leading)
-//                            .offset(x:15)
                         Text(knowledge.info3)
                             .font(.system(size: 15, weight: .regular))
                             .frame(width: 350, height: 80, alignment: .topLeading)
@@ -145,11 +122,6 @@ struct TheoryKnowledgeView: View{
                                     .foregroundColor(Color(.white))
                             }
                         }.frame(width: 370)
-//                        Image(systemName:"ear")
-//                            .font(.system(size: 40, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                            .frame(width: 350, height: 50, alignment: .leading)
-//                            .offset(x:15)
                         Text(knowledge.info4)
                             .font(.system(size: 15, weight: .regular))
                             .frame(width: 350, height: 80, alignment: .topLeading)
@@ -169,11 +141,6 @@ struct TheoryKnowledgeView: View{
                                     .foregroundColor(Color(.white))
                             }
                         }.frame(width: 370)
-//                        Image(systemName:"list.bullet")
-//                            .font(.system(size: 40, weight: .bold))
-//                            .foregroundColor(Color("green_tone"))
-//                            .frame(width: 350, height: 50, alignment: .leading)
-//                            .offset(x:15)
                         Text(knowledge.info5)
                             .font(.system(size: 15, weight: .regular))
                             .frame(width: 350, height: 80, alignment: .topLeading)
@@ -181,10 +148,38 @@ struct TheoryKnowledgeView: View{
                     }.offset(y: 110)
                     
                     VStack{
+                        
+                        HStack{
+                            Image(systemName: "link")
+                            Text("Source")
+                            }.foregroundColor(Color("green_tone"))
+                            .font(.system(size: 25, weight: .bold))
+                            .frame(width: 360, alignment: .leading)
+                            .offset(x: 10)
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .frame(width: 350, height: 120)
+                                .foregroundColor(.white)
+                                .shadow(radius: 2)
+                            VStack{
+                                Text("10 Dos and Don’ts of Business Negotiating")
+                                    .font(.system(size: 15, weight: .bold))
+                                    .frame(width: 350, height: 20)
+                                    .foregroundColor(Color("green_tone"))
+                                Link(destination: knowledge.url, label: {
+                                    Text(knowledge.urlText)
+                                        .font(.system(size: 15, weight: .light))
+                                        .frame(width: 330, height: 50, alignment: .center)
+                                        .foregroundColor(Color(.black))
+                                })
+                            }.frame(width: 360, height: 80, alignment: .leading)
+                        }
+                        
                         Text("")
                             .font(.system(size: 18, weight: .bold))
                             .frame(width: 350, height: 200, alignment: .leading)
-                    }
+                    }.offset(y: 140).frame(width: 360, alignment: .leading).multilineTextAlignment(.leading)
                 }.offset(y: 20)
             }
             .scrollIndicators(.hidden)
