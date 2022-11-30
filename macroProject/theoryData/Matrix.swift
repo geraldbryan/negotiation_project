@@ -151,7 +151,7 @@ struct MatrixList{
                dis3: "Be careful not to share too much information with the other party, as this can leave you exposed and exploited.",
                dis4: "You can often overcomplicate a situation by exploring too many alternative solution. Keep your focus and keep the overall negotiation goal in mind.",
                urlName: "Collaborating Negotiation Styles",
-               urlText: "https://www.springtideprocurement.com/avoiding-negotiating-types/",
-               url: URL(string: "https://www.springtideprocurement.com/avoiding-negotiating-types/")!),
+               urlText: "https://www.springtideprocurement.com/collaborative-negotiating-types/",
+               url: URL(string: "https://www.springtideprocurement.com/collaborative-negotiating-types/")!),
     ]
 }
