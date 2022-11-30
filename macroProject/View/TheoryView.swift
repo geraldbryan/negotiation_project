@@ -77,7 +77,7 @@ struct TheoryView: View {
                             .frame(width: 350, alignment: .leading)
                             .offset(x:0, y: 20).foregroundColor(Color.black)
                         
-                        Text("Interesting ways on improving negotiation skills special created by Negotio.")
+                        Text("Interesting ways on improving negotiation skills special curated by Negotio.")
                             .foregroundColor(Color(.black))
                             .font(.system(size: 15, weight: .light))
                             .frame(width: 350, alignment: .leading)
